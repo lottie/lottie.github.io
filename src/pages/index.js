@@ -7,11 +7,10 @@ import Layout from "../components/layout"
 import Seo from "../components/seo"
 
 const Home = ({ data, location }) => {
-  console.log(data)
-  const siteTitle = data.site.siteMetadata?.title || `Title`
+  const author = data.site.siteMetadata?.author
 
   return (
-    <Layout location={location} title={siteTitle}>
+    <Layout location={location} author={author?.name || ''}>
       home page
       <Button>hi</Button>
     </Layout>
@@ -32,6 +31,10 @@ export const pageQuery = graphql`
     site {
       siteMetadata {
         title
+        author {
+          name
+          summary
+        }
       }
     }
   }

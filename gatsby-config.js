@@ -12,7 +12,7 @@ module.exports = {
     title: `Lottie Animation Community Website`,
     author: {
       name: `Lottie Animation Community`,
-      // summary: ``,
+      summary: ``,
     },
     description: `The official website for Lottie Animation Community`,
     siteUrl: `https://lottie.github.io/`,
