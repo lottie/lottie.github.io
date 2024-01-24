@@ -1,6 +1,8 @@
 import * as React from "react"
 import { graphql } from "gatsby"
 
+import Button from 'react-bootstrap/Button';
+
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 
@@ -11,6 +13,7 @@ const Home = ({ data, location }) => {
   return (
     <Layout location={location} title={siteTitle}>
       home page
+      <Button>hi</Button>
     </Layout>
   )
 }
