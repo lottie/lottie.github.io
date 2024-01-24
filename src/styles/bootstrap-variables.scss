@@ -1,3 +1,11 @@
+$primary:       #006a5f;
+
 $theme-colors: (
-  "primary": #006a5f,
+  "primary": $primary,
 );
+
+$nav-link-font-size: 1.125rem;
+$nav-link-font-weight: 600;
+
+$navbar-light-color:                $primary;
+$navbar-toggler-font-size:          18px;
