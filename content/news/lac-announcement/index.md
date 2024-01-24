@@ -1,7 +1,7 @@
 ---
 title: Lottie as a standard with Lottie Animation Community (LAC) format specification body
 date: "2024-01-24T12:01:01.284Z"
-description: "LAC Announcement"
+description: "LAC News"
 ---
 
 ![LAC background image](./lac.png)

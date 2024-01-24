@@ -5,7 +5,7 @@ import Bio from "../components/bio"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 
-const AnnouncementPostTemplate = ({
+const NewsPostTemplate = ({
   data: { previous, next, site, markdownRemark: post },
   location,
 }) => {
@@ -14,7 +14,7 @@ const AnnouncementPostTemplate = ({
   return (
     <Layout location={location} title={siteTitle}>
       <article
-        className="announcement-post"
+        className="news-post"
         itemScope
         itemType="http://schema.org/Article"
       >
@@ -31,7 +31,7 @@ const AnnouncementPostTemplate = ({
           <Bio />
         </footer>
       </article>
-      <nav className="announcement-post-nav">
+      <nav className="news-post-nav">
         <ul
           style={{
             display: `flex`,
@@ -70,10 +70,10 @@ export const Head = ({ data: { markdownRemark: post } }) => {
   )
 }
 
-export default AnnouncementPostTemplate
+export default NewsPostTemplate
 
 export const pageQuery = graphql`
-  query AnnouncementPostBySlug(
+  query NewsPostBySlug(
     $id: String!
     $previousPostId: String
     $nextPostId: String

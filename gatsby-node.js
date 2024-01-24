@@ -7,8 +7,8 @@
 const path = require(`path`)
 const { createFilePath } = require(`gatsby-source-filesystem`)
 
-// Define the template for announcement post
-const announcementPost = path.resolve(`./src/templates/announcement-post.js`)
+// Define the template for news post
+const newsPost = path.resolve(`./src/templates/news-post.js`)
 
 /**
  * @type {import('gatsby').GatsbyNode['createPages']}
@@ -16,7 +16,7 @@ const announcementPost = path.resolve(`./src/templates/announcement-post.js`)
 exports.createPages = async ({ graphql, actions, reporter }) => {
   const { createPage } = actions
 
-  // Get all markdown announcement posts sorted by date
+  // Get all markdown news posts sorted by date
   const result = await graphql(`
     {
       allMarkdownRemark(sort: { frontmatter: { date: ASC } }, limit: 1000) {
@@ -32,7 +32,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
 
   if (result.errors) {
     reporter.panicOnBuild(
-      `There was an error loading your announcement posts`,
+      `There was an error loading your news posts`,
       result.errors
     )
     return
@@ -40,8 +40,8 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
 
   const posts = result.data.allMarkdownRemark.nodes
 
-  // Create announcement posts pages
-  // But only if there's at least one markdown file found at "content/announcement" (defined in gatsby-config.js)
+  // Create news posts pages
+  // But only if there's at least one markdown file found at "content/news" (defined in gatsby-config.js)
   // `context` is available in the template as a prop and as a variable in GraphQL
 
   if (posts.length > 0) {
@@ -51,7 +51,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
 
       createPage({
         path: post.fields.slug,
-        component: announcementPost,
+        component: newsPost,
         context: {
           id: post.id,
           previousPostId,
@@ -90,7 +90,7 @@ exports.createSchemaCustomization = ({ actions }) => {
 
   // Also explicitly define the Markdown frontmatter
   // This way the "MarkdownRemark" queries will return `null` even when no
-  // announcement posts are stored inside "content/announcement" instead of returning an error
+  // news posts are stored inside "content/news" instead of returning an error
   createTypes(`
     type SiteSiteMetadata {
       author: Author
