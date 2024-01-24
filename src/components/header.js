@@ -1,10 +1,10 @@
-import * as React from "react";
-import Container from 'react-bootstrap/Container';
-import Nav from 'react-bootstrap/Nav';
-import Navbar from 'react-bootstrap/Navbar';
-import lottieLogo from '../images/lottie.svg';
-import { URLS, ROUTES } from '../constants/index.js';
-import { Link, navigate } from "gatsby";
+import * as React from "react"
+import Container from "react-bootstrap/Container"
+import Nav from "react-bootstrap/Nav"
+import Navbar from "react-bootstrap/Navbar"
+import lottieLogo from "../images/lottie.svg"
+import { URLS, ROUTES } from "../constants/index.js"
+import { Link, navigate } from "gatsby"
 
 export const Header = () => {
   return (
@@ -48,5 +48,5 @@ export const Header = () => {
         </Navbar.Collapse>
       </Container>
     </Navbar>
-  );
-};
+  )
+}

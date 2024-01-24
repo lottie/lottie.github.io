@@ -10,7 +10,7 @@ const Home = ({ data, location }) => {
   const author = data.site.siteMetadata?.author
 
   return (
-    <Layout location={location} author={author?.name || ''}>
+    <Layout location={location} author={author?.name || ""}>
       home page
       <Button>hi</Button>
     </Layout>

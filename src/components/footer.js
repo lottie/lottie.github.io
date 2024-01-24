@@ -1,10 +1,10 @@
 import * as React from "react"
-import Container from 'react-bootstrap/Container';
-import Nav from 'react-bootstrap/Nav';
-import Navbar from 'react-bootstrap/Navbar';
-import lottieLogo from '../images/lottie.svg';
-import { Link, navigate } from "gatsby";
-import { URLS, ROUTES } from '../constants/index.js';
+import Container from "react-bootstrap/Container"
+import Nav from "react-bootstrap/Nav"
+import Navbar from "react-bootstrap/Navbar"
+import lottieLogo from "../images/lottie.svg"
+import { Link, navigate } from "gatsby"
+import { URLS, ROUTES } from "../constants/index.js"
 
 export const Footer = ({ author }) => {
   return (
@@ -14,7 +14,7 @@ export const Footer = ({ author }) => {
           <img src={lottieLogo} className="logo" alt="Lottie logo" />
         </Link>
         <Navbar.Text>
-          <b>{author || ''}</b>
+          <b>{author || ""}</b>
         </Navbar.Text>
         <Nav className="d-inline-flex mt-2 mt-md-0 ms-md-auto">
           <Nav.Item>
@@ -48,5 +48,5 @@ export const Footer = ({ author }) => {
         </Nav>
       </Container>
     </Navbar>
-  );
+  )
 }
