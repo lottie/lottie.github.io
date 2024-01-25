@@ -72,7 +72,7 @@ const Home = ({ data, location }) => {
                 </h1>
               </Col>
               <Col md={{ span: 8, offset: 2 }}>
-                <h2 className="fs-5 text-center mb-4 fw-normal lh-base">
+                <h2 className="fs-5 mb-4 fw-normal lh-base">
                   {CONTENT.intro.body}
                 </h2>
               </Col>
