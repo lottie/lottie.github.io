@@ -1,6 +1,11 @@
 import * as React from "react"
 import { Link, graphql } from "gatsby"
 
+import Container from "react-bootstrap/Container"
+import Row from "react-bootstrap/Row"
+import Col from "react-bootstrap/Col"
+import Card from "react-bootstrap/Card"
+
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 
@@ -11,49 +16,71 @@ const NewsIndex = ({ data, location }) => {
   if (posts.length === 0) {
     return (
       <Layout location={location} title={siteTitle}>
-        <p>
-          No news posts found. Add markdown posts to "content/news" (or the
-          directory you specified for the "gatsby-source-filesystem" plugin in
-          gatsby-config.js).
-        </p>
+        <Container>
+          <Row>
+            <Col>
+              <p>No news posts found.</p>
+            </Col>
+          </Row>
+        </Container>
       </Layout>
     )
   }
 
   return (
     <Layout location={location} title={siteTitle}>
-      <ol style={{ listStyle: `none` }}>
-        {posts.map(post => {
-          const title = post.frontmatter.title || post.fields.slug
+      <section className="bg-body-tertiary">
+        <Container className="py-5">
+          <Row>
+            <Col className="py-5">
+              <h1 className="mb-3 h2">News</h1>
+              <h5 className="fw-normal">
+                Latest updates from Lottie Animation Community
+              </h5>
+            </Col>
+          </Row>
+        </Container>
+      </section>
+      <Container className="py-5 mb-5">
+        <Row xs={1} md={2} className="g-4">
+          {posts.map(post => {
+            const title = post.frontmatter.title || post.fields.slug
 
-          return (
-            <li key={post.fields.slug}>
-              <article
-                className="post-list-item"
-                itemScope
-                itemType="http://schema.org/Article"
-              >
-                <header>
-                  <h2>
-                    <Link to={post.fields.slug} itemProp="url">
-                      <span itemProp="headline">{title}</span>
-                    </Link>
-                  </h2>
-                  <small>{post.frontmatter.date}</small>
-                </header>
-                <section>
-                  <p
-                    dangerouslySetInnerHTML={{
-                      __html: post.frontmatter.description || post.excerpt,
-                    }}
-                    itemProp="description"
-                  />
-                </section>
-              </article>
-            </li>
-          )
-        })}
-      </ol>
+            return (
+              <Col key={post.fields.slug}>
+                <Card
+                  as="article"
+                  itemScope
+                  itemType="http://schema.org/Article"
+                  className="border-0 shadow-lg"
+                >
+                  {/* <Card.Img variant="top" src="holder.js/100px160" /> */}
+                  <Card.Body>
+                    <Card.Title>
+                      <Link
+                        to={post.fields.slug}
+                        itemProp="url"
+                        className="text-decoration-none"
+                      >
+                        <span itemProp="headline">{title}</span>
+                      </Link>
+                    </Card.Title>
+                    <Card.Text>
+                      <small>{post.frontmatter.date}</small>
+                    </Card.Text>
+                    <Card.Text
+                      dangerouslySetInnerHTML={{
+                        __html: post.frontmatter.description || post.excerpt,
+                      }}
+                      itemProp="description"
+                    />
+                  </Card.Body>
+                </Card>
+              </Col>
+            )
+          })}
+        </Row>
+      </Container>
     </Layout>
   )
 }
