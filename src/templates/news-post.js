@@ -1,5 +1,5 @@
 import * as React from "react"
-import { Link, graphql } from "gatsby"
+import { graphql } from "gatsby"
 
 import Container from "react-bootstrap/Container"
 import Row from "react-bootstrap/Row"
@@ -9,7 +9,7 @@ import Layout from "../components/layout"
 import Seo from "../components/seo"
 
 const NewsPostTemplate = ({
-  data: { previous, next, site, markdownRemark: post },
+  data: { site, markdownRemark: post },
   location,
 }) => {
   const siteTitle = site.siteMetadata?.title || `Title`
@@ -42,34 +42,6 @@ const NewsPostTemplate = ({
                 itemProp="articleBody"
               />
             </Col>
-            {/* <Col md={{ span: 8, offset: 2 }}>
-            <nav>
-              <ul
-                style={{
-                  display: `flex`,
-                  flexWrap: `wrap`,
-                  justifyContent: `space-between`,
-                  listStyle: `none`,
-                  padding: 0,
-                }}
-              >
-                <li>
-                  {previous && (
-                    <Link to={previous.fields.slug} rel="prev">
-                      ← {previous.frontmatter.title}
-                    </Link>
-                  )}
-                </li>
-                <li>
-                  {next && (
-                    <Link to={next.fields.slug} rel="next">
-                      {next.frontmatter.title} →
-                    </Link>
-                  )}
-                </li>
-              </ul>
-            </nav>
-          </Col> */}
           </Row>
         </Container>
       </article>
