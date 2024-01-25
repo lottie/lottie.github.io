@@ -58,7 +58,7 @@ const Home = ({ data, location }) => {
   const { urls } = siteMetadata || {}
 
   return (
-    <Layout location={location}>
+    <Layout>
       <section className="bg-primary-subtle">
         <Container className="py-5">
           <Row className="py-5">

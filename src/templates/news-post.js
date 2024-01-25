@@ -15,7 +15,7 @@ const NewsPostTemplate = ({
   const siteTitle = site.siteMetadata?.title || `Title`
 
   return (
-    <Layout location={location} title={siteTitle}>
+    <Layout>
       <article
         className="news-post"
         itemScope

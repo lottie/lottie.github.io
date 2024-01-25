@@ -12,7 +12,7 @@ const NotFoundPage = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata.title
 
   return (
-    <Layout location={location} title={siteTitle}>
+    <Layout>
       <section className="bg-primary-subtle">
         <Container className="py-5">
           <Row>

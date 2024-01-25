@@ -15,7 +15,7 @@ const NewsIndex = ({ data, location }) => {
 
   if (posts.length === 0) {
     return (
-      <Layout location={location} title={siteTitle}>
+      <Layout>
         <Container>
           <Row>
             <Col>
@@ -28,7 +28,7 @@ const NewsIndex = ({ data, location }) => {
   }
 
   return (
-    <Layout location={location} title={siteTitle}>
+    <Layout>
       <section className="bg-primary-subtle">
         <Container className="py-5">
           <Row>
