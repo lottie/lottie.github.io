@@ -25,7 +25,7 @@ jobs:
         uses: actions/checkout@v4
       - name: Setup
         run: |
-          npm instsall
+          npm install
       - name: Build
         run: |
           npm run build
