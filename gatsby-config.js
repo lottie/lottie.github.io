@@ -15,7 +15,11 @@ module.exports = {
       summary: ``,
     },
     description: `The official website for Lottie Animation Community`,
-    siteUrl: `https://lottie.github.io/`,
+    urls: {
+      site: `https://lottie.github.io/`,
+      org: `https://github.com/lottie`,
+      spec: `https://lottie.github.io/lottie-spec`,
+    },
     social: {
       github: `lottie`,
     },
@@ -67,8 +71,9 @@ module.exports = {
               siteMetadata {
                 title
                 description
-                siteUrl
-                site_url: siteUrl
+                urls {
+                  site
+                }
               }
             }
           }
@@ -80,8 +85,8 @@ module.exports = {
                 return Object.assign({}, node.frontmatter, {
                   description: node.excerpt,
                   date: node.frontmatter.date,
-                  url: site.siteMetadata.siteUrl + node.fields.slug,
-                  guid: site.siteMetadata.siteUrl + node.fields.slug,
+                  url: site.siteMetadata.urls.site + node.fields.slug,
+                  guid: site.siteMetadata.urls.site + node.fields.slug,
                   custom_elements: [{ "content:encoded": node.html }],
                 })
               })

@@ -1,20 +1,18 @@
-export const URLS = {
-  spec: {
-    url: "https://lottie.github.io/lottie-spec",
-    text: {
-      v1: "Specification",
-    },
+export const ROUTES = {
+  specification: {
+    route: "specification",
+    text: "Specification",
   },
   community: {
-    url: "https://github.com/lottie",
-    text: {
-      v1: "Community",
-      v2: "Start Contributing to Lottie",
-    },
+    route: "community",
+    text: "Community",
   },
-}
-
-export const ROUTES = {
-  implementations: "implementations",
-  news: "news",
+  implementations: {
+    route: "implementations",
+    text: "Implementations",
+  },
+  news: {
+    route: "news",
+    text: "News",
+  },
 }

@@ -5,7 +5,7 @@ import Container from "react-bootstrap/Container"
 import Row from "react-bootstrap/Row"
 import Col from "react-bootstrap/Col"
 import Button from "react-bootstrap/Button"
-import { URLS } from "../constants/index"
+import { ROUTES } from "../constants/index"
 
 import Layout from "../components/layout"
 import Seo from "../components/seo"
@@ -54,10 +54,11 @@ const CONTENT = {
 }
 
 const Home = ({ data, location }) => {
-  const author = data.site.siteMetadata?.author
+  const siteMetadata = data.site.siteMetadata
+  const { urls } = siteMetadata || {}
 
   return (
-    <Layout location={location} author={author?.name || ""}>
+    <Layout location={location}>
       <Container fluid className="bg-body-tertiary">
         <Row>
           <Col className="py-5 px-md-5 mb-4 text-center">
@@ -70,17 +71,18 @@ const Home = ({ data, location }) => {
               <span className="fs-4 text-center">{CONTENT.intro.body}</span>
             </Col>
 
-            <Button size="lg" href={URLS.spec.url}>
-              {URLS.spec.text.v1}
+            <Button size="lg" href={urls?.spec || ""} blank="_target">
+              {ROUTES.specification.text}
             </Button>
 
             <Button
               size="lg"
               variant="link"
               className="d-block mt-2 text-decoration-none text-primary"
-              href={URLS.community.url}
+              blank="_target"
+              href={urls?.org || ""}
             >
-              {URLS.community.text.v1}
+              {ROUTES.community.text}
             </Button>
           </Col>
         </Row>
@@ -111,8 +113,8 @@ const Home = ({ data, location }) => {
               <p key={`welcome-list-${index}`}>{content.body}</p>
             ))}
 
-            <Button size="lg" className="mt-4" href={URLS.community.url}>
-              {URLS.community.text.v2}
+            <Button size="lg" className="mt-4" href={urls?.org || ''}>
+              Start contributing to Lottie
             </Button>
           </Col>
         </Row>
@@ -138,6 +140,11 @@ export const pageQuery = graphql`
         author {
           name
           summary
+        }
+        urls {
+          site
+          org
+          spec
         }
       }
     }
