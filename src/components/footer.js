@@ -14,7 +14,6 @@ export const Footer = () => {
           siteMetadata {
             author {
               name
-              summary
             }
             urls {
               site

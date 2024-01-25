@@ -53,7 +53,7 @@ const CONTENT = {
   },
 }
 
-const Home = ({ data, location }) => {
+const Home = ({ data }) => {
   const siteMetadata = data.site.siteMetadata
   const { urls } = siteMetadata || {}
 
@@ -153,11 +153,6 @@ export const pageQuery = graphql`
   {
     site {
       siteMetadata {
-        title
-        author {
-          name
-          summary
-        }
         urls {
           site
           org

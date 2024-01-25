@@ -16,9 +16,6 @@ const Seo = ({ description, title, children }) => {
           siteMetadata {
             title
             description
-            social {
-              github
-            }
           }
         }
       }

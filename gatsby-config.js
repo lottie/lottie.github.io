@@ -12,16 +12,12 @@ module.exports = {
     title: `Lottie Animation Community Website`,
     author: {
       name: `Lottie Animation Community`,
-      summary: ``,
     },
     description: `The official website for Lottie Animation Community`,
     urls: {
       site: `https://lottie.github.io/`,
       org: `https://github.com/lottie`,
       spec: `https://lottie.github.io/lottie-spec`,
-    },
-    social: {
-      github: `lottie`,
     },
   },
   plugins: [

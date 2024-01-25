@@ -1,5 +1,4 @@
 import * as React from "react"
-import { graphql } from "gatsby"
 
 import Container from "react-bootstrap/Container"
 import Row from "react-bootstrap/Row"
@@ -8,9 +7,7 @@ import Col from "react-bootstrap/Col"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 
-const NotFoundPage = ({ data, location }) => {
-  const siteTitle = data.site.siteMetadata.title
-
+const NotFoundPage = () => {
   return (
     <Layout>
       <section className="bg-primary-subtle">
@@ -32,13 +29,3 @@ const NotFoundPage = ({ data, location }) => {
 export const Head = () => <Seo title="404: Not Found" />
 
 export default NotFoundPage
-
-export const pageQuery = graphql`
-  query {
-    site {
-      siteMetadata {
-        title
-      }
-    }
-  }
-`

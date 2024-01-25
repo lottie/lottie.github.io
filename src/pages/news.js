@@ -9,8 +9,7 @@ import Card from "react-bootstrap/Card"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 
-const NewsIndex = ({ data, location }) => {
-  const siteTitle = data.site.siteMetadata?.title || `Title`
+const NewsIndex = ({ data }) => {
   const posts = data.allMarkdownRemark.nodes
 
   if (posts.length === 0) {
@@ -96,11 +95,6 @@ export const Head = () => <Seo title="All news posts" />
 
 export const pageQuery = graphql`
   {
-    site {
-      siteMetadata {
-        title
-      }
-    }
     allMarkdownRemark(sort: { frontmatter: { date: DESC } }) {
       nodes {
         excerpt

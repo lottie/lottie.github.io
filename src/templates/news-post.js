@@ -8,12 +8,7 @@ import Col from "react-bootstrap/Col"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 
-const NewsPostTemplate = ({
-  data: { site, markdownRemark: post },
-  location,
-}) => {
-  const siteTitle = site.siteMetadata?.title || `Title`
-
+const NewsPostTemplate = ({ data: { markdownRemark: post } }) => {
   return (
     <Layout>
       <article
@@ -66,11 +61,6 @@ export const pageQuery = graphql`
     $previousPostId: String
     $nextPostId: String
   ) {
-    site {
-      siteMetadata {
-        title
-      }
-    }
     markdownRemark(id: { eq: $id }) {
       id
       excerpt(pruneLength: 160)
