@@ -11,8 +11,6 @@
     "url": "https://github.com/lottie/lottie.github.io/issues"
   },
   "dependencies": {
-    "@fontsource-variable/montserrat": "^5.0.17",
-    "@fontsource/merriweather": "^5.0.8",
     "bootstrap": "^5.3.2",
     "gatsby": "^5.13.1",
     "gatsby-plugin-feed": "^5.13.0",
