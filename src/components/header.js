@@ -7,7 +7,7 @@ import { ROUTES } from "../constants/index.js"
 import { Link, useStaticQuery, graphql } from "gatsby"
 
 export const Header = () => {
-  const { site } = useStaticQuery(
+  const { site, allMarkdownRemark } = useStaticQuery(
     graphql`
       query {
         site {
@@ -19,10 +19,19 @@ export const Header = () => {
             }
           }
         }
+        allMarkdownRemark(sort: { frontmatter: { date: DESC } }) {
+          nodes {
+            fields {
+              slug
+            }
+          }
+        }
       }
     `
   )
 
+  const newsRoutePrefix = `/${ROUTES.news.route}`
+  const newsRoute = (allMarkdownRemark.nodes || []).length === 0 ? newsRoutePrefix : allMarkdownRemark.nodes[0].fields.slug
   const { siteMetadata } = site
   const { urls } = siteMetadata
 
@@ -58,7 +67,7 @@ export const Header = () => {
               <Nav.Link
                 as={Link}
                 className="text-capitalize"
-                to={`/${ROUTES.news.route}`}
+                to={newsRoute}
               >
                 {ROUTES.news.text}
               </Nav.Link>
