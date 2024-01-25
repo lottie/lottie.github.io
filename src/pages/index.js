@@ -59,66 +59,81 @@ const Home = ({ data, location }) => {
 
   return (
     <Layout location={location}>
-      <Container fluid className="bg-body-tertiary">
-        <Row>
-          <Col className="py-5 px-md-5 mb-4 text-center">
-            <Col md={{ span: 6, offset: 3 }} className="my-4">
-              <h1 className="display-5 fw-bold text-primary">
-                {CONTENT.intro.title}
-              </h1>
-            </Col>
-            <Col md={{ span: 10, offset: 1 }} className="my-4">
-              <span className="fs-4 text-center">{CONTENT.intro.body}</span>
-            </Col>
+      <section className="bg-primary-subtle">
+        <Container className="py-5">
+          <Row className="py-5">
+            <Col className="text-center">
+              <Col md={{ span: 8, offset: 2 }}>
+                <h1
+                  className="display-3 mb-3 fw-bold"
+                  style={{ color: "#032d2a" }}
+                >
+                  {CONTENT.intro.title}
+                </h1>
+              </Col>
+              <Col md={{ span: 8, offset: 2 }}>
+                <h2 className="fs-5 text-center mb-4 fw-normal lh-base">
+                  {CONTENT.intro.body}
+                </h2>
+              </Col>
 
-            <Button size="lg" href={urls?.spec || ""} blank="_target">
-              {ROUTES.specification.text}
-            </Button>
+              <Button size="lg" href={urls?.spec || ""} blank="_target">
+                {ROUTES.specification.text}
+              </Button>
 
-            <Button
-              size="lg"
-              variant="link"
-              className="d-block mt-2 text-decoration-none text-primary"
-              blank="_target"
-              href={urls?.org || ""}
-            >
-              {ROUTES.community.text}
-            </Button>
-          </Col>
-        </Row>
-      </Container>
+              <div>
+                <Button
+                  size="lg"
+                  variant="link"
+                  className="mt-4 py-0 fw-semibold text-decoration-none text-primary"
+                  blank="_target"
+                  href={urls?.org || ""}
+                >
+                  {ROUTES.community.text}
+                </Button>
+              </div>
+            </Col>
+          </Row>
+        </Container>
+      </section>
       <Container>
         <Row className="py-5">
           <Col className="text-center">
-            <h2 className="fw-bold">{CONTENT.whyLottie.title}</h2>
+            <h2>{CONTENT.whyLottie.title}</h2>
             <Col md={{ span: 8, offset: 2 }} className="my-4">
               <p>{CONTENT.whyLottie.body}</p>
             </Col>
           </Col>
         </Row>
-        <Row className="py-5">
-          {CONTENT.whyLottie.list.map((content, index) => (
-            <Col md={6} key={`why-lottie-list-${index}`}>
-              <h3>{content.title}</h3>
-              <p>{content.body}</p>
-            </Col>
-          ))}
-        </Row>
-      </Container>
-      <Container fluid className="bg-body-tertiary">
-        <Row>
-          <Col className="py-5 px-md-5">
-            <h2 className="mb-4">{CONTENT.welcome.title}</h2>
-            {CONTENT.welcome.list.map((content, index) => (
-              <p key={`welcome-list-${index}`}>{content.body}</p>
-            ))}
-
-            <Button size="lg" className="mt-4" href={urls?.org || ''}>
-              Start contributing to Lottie
-            </Button>
+        <Row className="pb-5">
+          <Col md={{ span: 8, offset: 2 }}>
+            <Row>
+              {CONTENT.whyLottie.list.map((content, index) => (
+                <Col md={6} key={`why-lottie-list-${index}`}>
+                  <h5>{content.title}</h5>
+                  <p>{content.body}</p>
+                </Col>
+              ))}
+            </Row>
           </Col>
         </Row>
       </Container>
+      <section className="bg-primary-subtle">
+        <Container className="py-5">
+          <Row className="py-5">
+            <Col md={{ span: 8, offset: 2 }}>
+              <h2 className="mb-4">{CONTENT.welcome.title}</h2>
+              {CONTENT.welcome.list.map((content, index) => (
+                <p key={`welcome-list-${index}`} className="mb-4">{content.body}</p>
+              ))}
+
+              <Button size="lg" className="mt-4" href={urls?.org || ""}>
+                Start contributing to Lottie
+              </Button>
+            </Col>
+          </Row>
+        </Container>
+      </section>
     </Layout>
   )
 }

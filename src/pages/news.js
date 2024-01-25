@@ -29,7 +29,7 @@ const NewsIndex = ({ data, location }) => {
 
   return (
     <Layout location={location} title={siteTitle}>
-      <section className="bg-body-tertiary">
+      <section className="bg-primary-subtle">
         <Container className="py-5">
           <Row>
             <Col className="py-5">
