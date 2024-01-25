@@ -12,11 +12,11 @@ import Seo from "../components/seo"
 
 const CONTENT = {
   intro: {
-    title: "Lottie: An open-source animation format",
-    body: '​​Lottie is an open-source animation file format and framework that allows developers to use animations in their applications. It was created by Airbnb and released in 2017.  The name "Lottie" is inspired by Lottie Reiniger, a pioneering German animator.',
+    title: "Lottie is an open format for animated vector graphics",
+    body: "Lottie is an open-source vector graphics animation file format . It was first created in 2015 by Hernan Torrisi as an export format for the export and playback of animations from Adobe After Effects. It is now a highly popular animation format used on the web, mobile applications and other systems with multiple independent renderer implementations and creation support. ",
   },
   whyLottie: {
-    title: "Why Lottie?",
+    title: "What is Lottie?",
     body: "Lottie animations are typically created using Adobe After Effects, and they can include complex animations, motion graphics, and interactive elements. Once an animation is created, it can be exported as a Lottie JSON file. This JSON file contains all the information needed to recreate the animation, including keyframes, easing curves, and layer information.",
     list: [
       {
@@ -32,8 +32,8 @@ const CONTENT = {
         body: "Lottie animations are defined using the widely used JSON format, allowing for ease of transfer over the web and manipulation with existing tools.",
       },
       {
-        title: "Ecosystem",
-        body: "Lottie animations are defined using the widely used JSON format, allowing for ease of transfer over the web and manipulation with existing tools.",
+        title: "Rich Ecosystem",
+        body: "?",
       },
     ],
   },
@@ -63,7 +63,7 @@ const Home = ({ data, location }) => {
         <Container className="py-5">
           <Row className="py-5">
             <Col className="text-center">
-              <Col md={{ span: 8, offset: 2 }}>
+              <Col md={{ span: 10, offset: 1 }}>
                 <h1
                   className="display-3 mb-3 fw-bold"
                   style={{ color: "#032d2a" }}
@@ -124,7 +124,9 @@ const Home = ({ data, location }) => {
             <Col md={{ span: 8, offset: 2 }}>
               <h2 className="mb-4">{CONTENT.welcome.title}</h2>
               {CONTENT.welcome.list.map((content, index) => (
-                <p key={`welcome-list-${index}`} className="mb-4">{content.body}</p>
+                <p key={`welcome-list-${index}`} className="mb-4">
+                  {content.body}
+                </p>
               ))}
 
               <Button size="lg" className="mt-4" href={urls?.org || ""}>
