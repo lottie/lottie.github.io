@@ -4,7 +4,7 @@ import Nav from "react-bootstrap/Nav"
 import Navbar from "react-bootstrap/Navbar"
 import lottieLogo from "../images/lottie.svg"
 import { ROUTES } from "../constants/index.js"
-import { Link, navigate, useStaticQuery, graphql } from "gatsby"
+import { Link, useStaticQuery, graphql } from "gatsby"
 
 export const Header = () => {
   const { site } = useStaticQuery(
@@ -42,9 +42,9 @@ export const Header = () => {
             </Nav.Item>
             <Nav.Item>
               <Nav.Link
-                as="button"
+                as={Link}
                 className="text-capitalize"
-                onClick={() => navigate(ROUTES.implementations.route)}
+                to={`/${ROUTES.implementations.route}`}
               >
                 {ROUTES.implementations.text}
               </Nav.Link>
@@ -56,9 +56,9 @@ export const Header = () => {
             </Nav.Item>
             <Nav.Item>
               <Nav.Link
-                as="button"
+                as={Link}
                 className="text-capitalize"
-                onClick={() => navigate(ROUTES.news.route)}
+                to={`/${ROUTES.news.route}`}
               >
                 {ROUTES.news.text}
               </Nav.Link>
