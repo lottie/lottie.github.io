@@ -31,13 +31,13 @@ export const Footer = () => {
   const { urls, author } = siteMetadata
 
   return (
-    <Navbar expand="lg" as="footer">
+    <Navbar expand="lg" as="footer" className="py-1">
       <Container>
         <Link className="navbar-brand" to="/">
           <img src={lottieLogo} className="logo" alt="Lottie logo" />
         </Link>
-        <Navbar.Text>
-          <b>{author?.name || ""}</b>
+        <Navbar.Text className="text-black">
+          {author?.name || ""}
         </Navbar.Text>
         <Nav className="d-inline-flex mt-2 mt-md-0 ms-md-auto">
           <Nav.Item>
