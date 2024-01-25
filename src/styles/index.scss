@@ -1,1 +1,7 @@
 @import "./bootstrap.scss";
+
+.news-post {
+  p:first-child .gatsby-resp-image-wrapper:first-child {
+    margin-top: -6.625rem;
+  }
+}

@@ -6,6 +6,8 @@ description: "LAC News"
 
 ![LAC background image](./lac.png)
 
+<br>
+
 We are excited to announce the Lottie Animation Community (LAC), a non-profit open source project hosted by The Linux Foundation, dedicated to establishing the Lottie File Format as an efficient, scalable and cross-platform animated vector graphics technology and open file format.The evolution and prevalence of Lottie has prompted the need for a formal format specification and democratic change mechanism, to help developers and consumers of the format ensure reliable performance and compatibility across the diverse platforms on which Lottie is used.
 
 LAC was founded by a community of pioneers in recognition of that need. LAC aims to develop a formal Lottie format specification for implementation across renderers and other tools, and works towards the promotion and widespread adoption of the Lottie file format as an industry standard.
