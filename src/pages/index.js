@@ -6,7 +6,7 @@ import Row from "react-bootstrap/Row"
 import Col from "react-bootstrap/Col"
 import Button from "react-bootstrap/Button"
 
-import { Player } from "@lottiefiles/react-lottie-player"
+import LottiePlayer from "lottie-react"
 
 import lottieLogo from "../assets/lottie-logo.json"
 
@@ -104,12 +104,12 @@ const Home = ({ data }) => {
       <Container>
         <Row className="pt-4 pb-5">
           <Col className="text-center">
-            <Player
-              autoplay
-              loop
-              src={lottieLogo}
+            <LottiePlayer
+              animationData={lottieLogo}
+              loop={true}
               style={{ width: "190px", height: "175px" }}
-            ></Player>
+              className="mx-auto"
+            />
             <h2>{CONTENT.whyLottie.title}</h2>
             <Col md={{ span: 8, offset: 2 }} className="my-4">
               <p>{CONTENT.whyLottie.body}</p>
