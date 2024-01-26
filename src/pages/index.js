@@ -5,6 +5,11 @@ import Container from "react-bootstrap/Container"
 import Row from "react-bootstrap/Row"
 import Col from "react-bootstrap/Col"
 import Button from "react-bootstrap/Button"
+
+import { Player } from "@lottiefiles/react-lottie-player"
+
+import lottieLogo from "../images/lottie-logo.json"
+
 import { ROUTES } from "../constants/index"
 
 import Layout from "../components/layout"
@@ -97,8 +102,14 @@ const Home = ({ data }) => {
         </Container>
       </section>
       <Container>
-        <Row className="py-5">
+        <Row className="pt-4 pb-5">
           <Col className="text-center">
+            <Player
+              autoplay
+              loop
+              src={lottieLogo}
+              style={{ width: "190px", height: "175px" }}
+            ></Player>
             <h2>{CONTENT.whyLottie.title}</h2>
             <Col md={{ span: 8, offset: 2 }} className="my-4">
               <p>{CONTENT.whyLottie.body}</p>
