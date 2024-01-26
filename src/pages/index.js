@@ -33,7 +33,7 @@ const CONTENT = {
       },
       {
         title: "Rich Ecosystem",
-        body: "?",
+        body: "A mature and robust ecosystem of players, creation tools, libraries, and free assets. Trusted and used by thousands of companies to enrich their user experience.",
       },
     ],
   },
