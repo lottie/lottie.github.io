@@ -17,7 +17,7 @@ export const Footer = () => {
             }
             urls {
               site
-              org
+              specRepo
               spec
             }
           }
@@ -58,13 +58,13 @@ export const Footer = () => {
             <Nav.Link
               as={Link}
               className="text-capitalize"
-              to={`/${ROUTES.implementations.route}`}
+              to={ROUTES.implementations.route}
             >
               {ROUTES.implementations.text}
             </Nav.Link>
           </Nav.Item>
           <Nav.Item>
-            <Nav.Link href={urls?.org || ""} target="_blank">
+            <Nav.Link as={Link} to={ROUTES.community.route} target="_blank">
               {ROUTES.community.text}
             </Nav.Link>
           </Nav.Item>

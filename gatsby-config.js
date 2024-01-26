@@ -16,7 +16,7 @@ module.exports = {
     description: `The official website for Lottie Animation Community`,
     urls: {
       site: `https://lottie.github.io/`,
-      org: `https://github.com/lottie`,
+      specRepo: `https://github.com/lottie/lottie-spec`,
       spec: `https://lottie.github.io/lottie-spec`,
     },
   },

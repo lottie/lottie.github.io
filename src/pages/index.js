@@ -42,7 +42,7 @@ const CONTENT = {
       },
     ],
   },
-  welcome: {
+  community: {
     title: "About Lottie Animation Community",
     list: [
       {
@@ -82,8 +82,8 @@ const Home = ({ data }) => {
                 </h2>
               </Col>
 
-              <Button size="lg" href={urls?.spec || ""} blank="_target">
-                {ROUTES.specification.text}
+              <Button size="lg" href={urls?.spec || ""} target="_blank">
+                {ROUTES.specification.text2}
               </Button>
 
               <div>
@@ -91,10 +91,10 @@ const Home = ({ data }) => {
                   size="lg"
                   variant="link"
                   className="mt-4 py-0 fw-semibold text-decoration-none text-primary"
-                  blank="_target"
-                  href={urls?.org || ""}
+                  target="_blank"
+                  href={urls?.specRepo || ""}
                 >
-                  {ROUTES.community.text}
+                  {ROUTES.contribute.text}
                 </Button>
               </div>
             </Col>
@@ -125,6 +125,11 @@ const Home = ({ data }) => {
                   <p>{content.body}</p>
                 </Col>
               ))}
+              <Col>
+                <Button size="lg" href={urls?.spec || ""} target="_blank">
+                  {ROUTES.specification.text2}
+                </Button>
+              </Col>
             </Row>
           </Col>
         </Row>
@@ -133,15 +138,23 @@ const Home = ({ data }) => {
         <Container className="py-5">
           <Row className="py-5">
             <Col md={{ span: 8, offset: 2 }}>
-              <h2 className="mb-4">{CONTENT.welcome.title}</h2>
-              {CONTENT.welcome.list.map((content, index) => (
+              <h2 id="community" className="mb-4">
+                {CONTENT.community.title}
+              </h2>
+              {CONTENT.community.list.map((content, index) => (
                 <p key={`welcome-list-${index}`} className="mb-4">
                   {content.body}
                 </p>
               ))}
 
-              <Button size="lg" className="mt-4" href={urls?.org || ""}>
-                Start contributing to Lottie
+              <Button
+                as="a"
+                size="lg"
+                className="mt-4"
+                href={urls?.specRepo || ""}
+                target="_blank"
+              >
+                {ROUTES.contribute.text}
               </Button>
             </Col>
           </Row>
@@ -166,7 +179,7 @@ export const pageQuery = graphql`
       siteMetadata {
         urls {
           site
-          org
+          specRepo
           spec
         }
       }

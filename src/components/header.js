@@ -14,7 +14,7 @@ export const Header = () => {
           siteMetadata {
             urls {
               site
-              org
+              specRepo
               spec
             }
           }
@@ -31,7 +31,10 @@ export const Header = () => {
   )
 
   const newsRoutePrefix = `/${ROUTES.news.route}`
-  const newsRoute = (allMarkdownRemark.nodes || []).length === 0 ? newsRoutePrefix : allMarkdownRemark.nodes[0].fields.slug
+  const newsRoute =
+    (allMarkdownRemark.nodes || []).length === 0
+      ? newsRoutePrefix
+      : allMarkdownRemark.nodes[0].fields.slug
   const { siteMetadata } = site
   const { urls } = siteMetadata
 
@@ -53,22 +56,18 @@ export const Header = () => {
               <Nav.Link
                 as={Link}
                 className="text-capitalize"
-                to={`/${ROUTES.implementations.route}`}
+                to={ROUTES.implementations.route}
               >
                 {ROUTES.implementations.text}
               </Nav.Link>
             </Nav.Item>
             <Nav.Item>
-              <Nav.Link href={urls?.org || ""} target="_blank">
+              <Nav.Link as={Link} to={ROUTES.community.route} target="_blank">
                 {ROUTES.community.text}
               </Nav.Link>
             </Nav.Item>
             <Nav.Item>
-              <Nav.Link
-                as={Link}
-                className="text-capitalize"
-                to={newsRoute}
-              >
+              <Nav.Link as={Link} className="text-capitalize" to={newsRoute}>
                 {ROUTES.news.text}
               </Nav.Link>
             </Nav.Item>

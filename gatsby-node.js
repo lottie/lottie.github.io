@@ -103,7 +103,7 @@ exports.createSchemaCustomization = ({ actions }) => {
 
     type Urls {
       site: String
-      org: String
+      specRepo: String
       spec: String
     }
 
