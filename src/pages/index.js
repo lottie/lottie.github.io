@@ -18,27 +18,27 @@ import Seo from "../components/seo"
 const CONTENT = {
   intro: {
     title: "Lottie is an open format for animated vector graphics",
-    body: "Lottie is an open-source vector graphics animation file format . It was first created in 2015 by Hernan Torrisi as an export format for the export and playback of animations from Adobe After Effects. It is now a highly popular animation format used on the web, mobile applications and other systems with multiple independent renderer implementations and creation support. ",
+    body: "​​Lottie is an open-source vector graphics animation file format . It was first created in 2015 by Hernan Torrisi as an export format for the export and playback of animations from Adobe After Effects. It is now a highly popular animation format used on the web, mobile applications and other systems with multiple independent renderer implementations and creation support.",
   },
   whyLottie: {
     title: "What is Lottie?",
     body: "Lottie animations are typically created using Adobe After Effects, and they can include complex animations, motion graphics, and interactive elements. Once an animation is created, it can be exported as a Lottie JSON file. This JSON file contains all the information needed to recreate the animation, including keyframes, easing curves, and layer information.",
     list: [
       {
-        title: "Open file format specification",
-        body: "With the Lottie Animation Community (LAC), we strive to standardize and maintain the Lottie Animation Format",
+        title: "Vector Graphics",
+        body: "Vector Graphics are resolution-independent images created from geometric shapes like curves and lines rather than a grid of pixels",
       },
       {
-        title: "Machine Readable JSON",
-        body: "Lottie animations are shipped as simple machine readable .json files, making them extremely easy to work with.",
+        title: "Tweening",
+        body: "Tweening is the process of animating graphics where the animator defines shape properties at specific keyframes and the frames between those are interpolated automatically.",
       },
       {
-        title: "JSON-based format",
-        body: "Lottie animations are defined using the widely used JSON format, allowing for ease of transfer over the web and manipulation with existing tools.",
+        title: "Open file format",
+        body: "Lottie is an open standard based on the JSON format, allowing for ease of transfer over the web and manipulation with existing tools.",
       },
       {
         title: "Rich Ecosystem",
-        body: "A mature and robust ecosystem of players, creation tools, libraries, and free assets. Trusted and used by thousands of companies to enrich their user experience.",
+        body: "A mature and robust ecosystem of [players, creation tools, libraries and free assets](./implementations). Trusted and used by thousands of companies to enrich their user experience.",
       },
     ],
   },
