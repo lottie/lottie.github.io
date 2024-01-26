@@ -25,10 +25,10 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
       - name: Setup
+        env: 
+            NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           npm install
-      - name: Build
-        run: |
           npm run build
       - name: Setup Pages
         uses: actions/configure-pages@v4
