@@ -8,7 +8,7 @@ import Button from "react-bootstrap/Button"
 
 import { Player } from "@lottiefiles/react-lottie-player"
 
-import lottieLogo from "../images/lottie-logo.json"
+import lottieLogo from "../assets/lottie-logo.json"
 
 import { ROUTES } from "../constants/index"
 
