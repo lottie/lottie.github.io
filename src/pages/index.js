@@ -33,12 +33,12 @@ const CONTENT = {
         body: "Tweening is the process of animating graphics where the animator defines shape properties at specific keyframes and the frames between those are interpolated automatically.",
       },
       {
-        title: "Open file format",
-        body: "Lottie is an open standard based on the JSON format, allowing for ease of transfer over the web and manipulation with existing tools.",
+        title: "Rich Ecosystem",
+        body: "A mature and robust ecosystem of players, creation tools, libraries and free assets. Trusted and used by thousands of companies to enrich their user experience.",
       },
       {
-        title: "Rich Ecosystem",
-        body: "A mature and robust ecosystem of [players, creation tools, libraries and free assets](./implementations). Trusted and used by thousands of companies to enrich their user experience.",
+        title: "Open file format",
+        body: "Lottie is an open standard based on the JSON format, allowing for ease of transfer over the web and manipulation with existing tools.",
       },
     ],
   },
@@ -125,7 +125,7 @@ const Home = ({ data }) => {
                   <p>{content.body}</p>
                 </Col>
               ))}
-              <Col>
+              <Col className="mt-4">
                 <Button size="lg" href={urls?.spec || ""} target="_blank">
                   {ROUTES.specification.text2}
                 </Button>
