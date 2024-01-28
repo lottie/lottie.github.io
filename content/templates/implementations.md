@@ -2,6 +2,7 @@
 title: Implementations
 date: "2024-01-24T12:01:01.284Z"
 description: "A curated list of awesome things related to Lottie"
+image: null
 ---
 
 ## Resources

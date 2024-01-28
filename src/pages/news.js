@@ -1,6 +1,8 @@
 import * as React from "react"
 import { Link, graphql } from "gatsby"
 
+import { GatsbyImage, getImage } from "gatsby-plugin-image"
+
 import Container from "react-bootstrap/Container"
 import Row from "react-bootstrap/Row"
 import Col from "react-bootstrap/Col"
@@ -45,6 +47,10 @@ const NewsIndex = ({ data }) => {
           {posts.map(post => {
             const title = post.frontmatter.title || post.fields.slug
 
+            const featuredImg = getImage(
+              post.frontmatter.featuredImage?.childImageSharp?.gatsbyImageData
+            )
+
             return (
               <Col key={post.fields?.slug || ""}>
                 <Card
@@ -53,7 +59,12 @@ const NewsIndex = ({ data }) => {
                   itemType="http://schema.org/Article"
                   className="border-0 shadow-lg"
                 >
-                  {/* <Card.Img variant="top" src="holder.js/100px160" /> */}
+                  <Card.Img
+                    as={GatsbyImage}
+                    image={featuredImg}
+                    alt="news-post-featured-image"
+                    variant="top"
+                  />
                   <Card.Body>
                     <Card.Title>
                       <Link
@@ -97,7 +108,7 @@ export const pageQuery = graphql`
   {
     allMarkdownRemark(
       sort: { frontmatter: { date: DESC } }
-      filter: {fields: {contentType: {eq: "news"}}}
+      filter: { fields: { contentType: { eq: "news" } } }
     ) {
       nodes {
         excerpt
@@ -108,6 +119,15 @@ export const pageQuery = graphql`
           date(formatString: "MMMM DD, YYYY")
           title
           description
+          featuredImage {
+            childImageSharp {
+              gatsbyImageData(
+                height: 200
+                placeholder: BLURRED
+                formats: [AUTO, WEBP, AVIF]
+              )
+            }
+          }
         }
       }
     }

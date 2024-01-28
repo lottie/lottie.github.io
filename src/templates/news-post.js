@@ -4,11 +4,16 @@ import { graphql } from "gatsby"
 import Container from "react-bootstrap/Container"
 import Row from "react-bootstrap/Row"
 import Col from "react-bootstrap/Col"
+import { GatsbyImage, getImage } from "gatsby-plugin-image"
 
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 
 const NewsPostTemplate = ({ data: { markdownRemark: post } }) => {
+  const featuredImg = getImage(
+    post.frontmatter.featuredImage?.childImageSharp?.gatsbyImageData
+  )
+
   return (
     <Layout>
       <article
@@ -30,6 +35,13 @@ const NewsPostTemplate = ({ data: { markdownRemark: post } }) => {
         </section>
         <Container>
           <Row>
+            <Col xs={12} className="text-center">
+              <GatsbyImage
+                className="page-thumbnail-image mb-4"
+                image={featuredImg}
+                alt="news-post-featured-image"
+              />
+            </Col>
             <Col md={{ span: 8, offset: 2 }}>
               <section
                 className="pb-5"
@@ -69,6 +81,16 @@ export const pageQuery = graphql`
         title
         date(formatString: "MMMM DD, YYYY")
         description
+        featuredImage {
+          childImageSharp {
+            gatsbyImageData(
+              width: 900
+              placeholder: BLURRED
+              quality: 80
+              formats: [AUTO, WEBP, AVIF]
+            )
+          }
+        }
       }
     }
     previous: markdownRemark(id: { eq: $previousPostId }) {
