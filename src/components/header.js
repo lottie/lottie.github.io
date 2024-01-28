@@ -41,12 +41,18 @@ export const Header = () => {
   return (
     <Navbar expand="lg" as="header">
       <Container>
-        <Link className="navbar-brand" to="/">
+        <Link className="navbar-brand" to="/" aria-label="Lottie">
           <img src={lottieLogo} className="logo" alt="Lottie logo" />
         </Link>
-        <Navbar.Toggle aria-controls="basic-navbar-nav" />
-        <Navbar.Collapse id="basic-navbar-nav" role="a">
-          <Nav className="d-inline-flex mt-2 mt-md-0 ms-md-auto">
+        <Navbar.Toggle
+          aria-controls="bdNavbar"
+          aria-label="Toggle Navigation"
+        />
+        <Navbar.Collapse id="basic-navbar-nav">
+          <Nav
+            className="d-inline-flex mt-2 mt-md-0 ms-md-auto"
+            aria-label="Main navigation"
+          >
             <Nav.Item>
               <Nav.Link href={urls?.spec || ""} target="_blank">
                 {ROUTES.specification.text}

@@ -121,7 +121,7 @@ const Home = ({ data }) => {
             <Row>
               {CONTENT.whyLottie.list.map((content, index) => (
                 <Col md={6} key={`why-lottie-list-${index}`}>
-                  <h5>{content.title}</h5>
+                  <h3 classname="h5">{content.title}</h3>
                   <p>{content.body}</p>
                 </Col>
               ))}
@@ -138,9 +138,9 @@ const Home = ({ data }) => {
         <Container className="py-5">
           <Row className="py-5">
             <Col md={{ span: 8, offset: 2 }}>
-              <h2 id="community" className="mb-4">
+              <h4 id="community" className="h2 mb-4">
                 {CONTENT.community.title}
-              </h2>
+              </h4>
               {CONTENT.community.list.map((content, index) => (
                 <p key={`welcome-list-${index}`} className="mb-4">
                   {content.body}
