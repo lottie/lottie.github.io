@@ -46,7 +46,7 @@ const NewsIndex = ({ data }) => {
             const title = post.frontmatter.title || post.fields.slug
 
             return (
-              <Col key={post.fields.slug}>
+              <Col key={post.fields?.slug || ""}>
                 <Card
                   as="article"
                   itemScope
@@ -57,7 +57,7 @@ const NewsIndex = ({ data }) => {
                   <Card.Body>
                     <Card.Title>
                       <Link
-                        to={post.fields.slug}
+                        to={post.fields?.slug || ""}
                         itemProp="url"
                         className="text-decoration-none"
                       >
@@ -95,7 +95,10 @@ export const Head = () => <Seo title="All news posts" />
 
 export const pageQuery = graphql`
   {
-    allMarkdownRemark(sort: { frontmatter: { date: DESC } }) {
+    allMarkdownRemark(
+      sort: { frontmatter: { date: DESC } }
+      filter: {fields: {contentType: {eq: "news"}}}
+    ) {
       nodes {
         excerpt
         fields {

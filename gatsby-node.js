@@ -16,7 +16,7 @@ const newsPost = path.resolve(`./src/templates/news-post.js`)
 exports.createPages = async ({ graphql, actions, reporter }) => {
   const { createPage } = actions
 
-  // Get all markdown news posts sorted by date
+  // Get all markdown files sorted by date
   const result = await graphql(`
     {
       allMarkdownRemark(sort: { frontmatter: { date: ASC } }, limit: 1000) {
@@ -24,6 +24,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
           id
           fields {
             slug
+            contentType
           }
         }
       }
@@ -38,28 +39,51 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     return
   }
 
-  const posts = result.data.allMarkdownRemark.nodes
+  const files = result.data.allMarkdownRemark.nodes
 
-  // Create news posts pages
-  // But only if there's at least one markdown file found at "content/news" (defined in gatsby-config.js)
+  // Create templates
+  // But only if there's at least one markdown file found at "content" (defined in gatsby-config.js)
   // `context` is available in the template as a prop and as a variable in GraphQL
+  if (files.length === 0) return
 
-  if (posts.length > 0) {
-    posts.forEach((post, index) => {
-      const previousPostId = index === 0 ? null : posts[index - 1].id
-      const nextPostId = index === posts.length - 1 ? null : posts[index + 1].id
+  files.forEach((file, index) => {
+    const { id, fields } = file
+    const { slug, contentType } = fields
 
-      createPage({
-        path: post.fields.slug,
-        component: newsPost,
-        context: {
-          id: post.id,
-          previousPostId,
-          nextPostId,
-        },
-      })
-    })
-  }
+    switch (contentType) {
+      case "news":
+        const previousPostId = index === 0 ? null : files[index - 1].id
+        const nextPostId =
+          index === files.length - 1 ? null : files[index + 1].id
+
+        createPage({
+          path: slug,
+          component: newsPost,
+          context: {
+            id,
+            previousPostId,
+            nextPostId,
+          },
+        })
+
+        break
+      case "templates":
+        const parsedSlug = path.parse(slug)
+        const component = path.resolve(`./src/templates/${parsedSlug.name}.js`)
+
+        createPage({
+          path: slug,
+          component: component,
+          context: {
+            id,
+          },
+        })
+
+        break
+      default:
+        break
+    }
+  })
 }
 
 /**
@@ -70,11 +94,21 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
 
   if (node.internal.type === `MarkdownRemark`) {
     const relativeFilePath = createFilePath({ node, getNode })
+    const { sourceInstanceName } = getNode(node.parent)
+
+    const slug =
+      sourceInstanceName && sourceInstanceName === "news" ? "/news" : ""
 
     createNodeField({
       name: `slug`,
       node,
-      value: `/news${relativeFilePath}`,
+      value: `${slug}${relativeFilePath}`,
+    })
+
+    createNodeField({
+      node,
+      name: "contentType",
+      value: sourceInstanceName,
     })
   }
 }
@@ -120,6 +154,7 @@ exports.createSchemaCustomization = ({ actions }) => {
 
     type Fields {
       slug: String
+      contentType: String
     }
   `)
 }
