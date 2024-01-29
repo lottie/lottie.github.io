@@ -121,7 +121,7 @@ const Home = ({ data }) => {
             <Row>
               {CONTENT.whyLottie.list.map((content, index) => (
                 <Col md={6} key={`why-lottie-list-${index}`}>
-                  <h3 classname="h5">{content.title}</h3>
+                  <h3 className="h5">{content.title}</h3>
                   <p>{content.body}</p>
                 </Col>
               ))}
