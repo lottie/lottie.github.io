@@ -7,7 +7,8 @@ image: null
 
 ## Resources
 
-- <a href="" target="_blank">What is Lottie</a> by @lottiefiles
+- <a href="https://lottiefiles.com/what-is-lottie" target="_blank">What is Lottie</a> by @lottiefiles
+- <a href="https://lottiefiles.github.io/lottie-docs/" target="_blank">Lottie Docs</a> by @lottiefiles
 - <a href="https://airbnb.io/lottie/#/" target="_blank">Lottie Docs</a> by @airbnb
 
 <br/>
@@ -32,6 +33,7 @@ image: null
 
 - Keyshape for Mac <a href="https://www.keyshapeapp.com/" target="_blank">View</a>
 - <a href="https://www.haikuforteams.com/animator/" target="_blank">Animator</a> by @haikuforteams
+- <a href="https://glaxnimate.mattbas.org/ " target="_blank">Glaxnimate </a> by @mbasaglia
 
 <br/>
 
@@ -70,9 +72,9 @@ image: null
 
 ##### Multi-Platform
 
-- rLottie by @Samsung <a href="https://github.com/Samsung/rlottie" target="_blank">View</a>
 - QT <a href="https://www.qt.io/blog/2019/03/08/announcing-qtlottie" target="_blank">View</a>
 - Skottie - Lottie Animation Player <a href="https://skia.org/user/modules/skottie" target="_blank">View</a>
+- <a href="https://www.thorvg.org/" target="_blank">Thorvg</a> - for rendering vector-based scenes and animations, including SVG and Lottie formats
 
 <br/>
 
@@ -87,3 +89,4 @@ image: null
 - lottie-interactive - Custom web element to add interactivity to your Lottie Animations <a href="https://github.com/samuelOsborne/Lottie-interactive" target="_blank">View</a>
 - lottie-toggles - Utility library to easily use the various switch and toggle animations <a href="https://github.com/CoderVishalSehgal/lottie-toggles" target="_blank">View</a>
 - relottie - Lottie processor powered by plugins <a href="https://github.com/lottiefiles/relottie" target="_blank">View</a>
+- <a href="https://gitlab.com/mattbas/python-lottie" target="_blank">python-lottie</a> - Library to manipulate Lottie animate and convert between file formats
