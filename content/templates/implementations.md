@@ -51,6 +51,7 @@ image: null
 - <a href="https://github.com/LottieFiles/svelte-lottie-player" target="_blank">svelte-lottie-player</a> - by @lottiefiles
 - <a href="https://github.com/chenqingspring/vue-lottie" target="_blank">vue-lottie</a> - by @chenqingspring
 - <a href="https://github.com/chenqingspring/ng-lottie" target="_blank">ng-lottie</a> - Lottie for Angular by @chenqingspring
+- <a href="https://github.com/LottieFiles/dotlottie-web"  target="_blank">dotlottie-web</a>
 
 ##### Android
 
@@ -60,16 +61,19 @@ image: null
 - <a href="https://github.com/bradmartin/nativescript-lottie" target="_blank">native-script-lottie</a>
 - <a href="https://github.com/m1ga/ti.animation" target="_blank">ti.animation</a> - Appcelerator Titanium bindings
 - <a href="https://github.com/simolus3/fluttie" target="_blank">Fluttie</a> - Lottie for Flutter
+- <a href="https://github.com/LottieFiles/dotlottie-android" target="_blank">dotlottie-android</a>
 
 ##### iOS
 
 - <a href="https://github.com/airbnb/lottie-ios" target="_blank">lottie-ios</a> - official
 - <a href="https://github.com/airbnb/lottie-react-native" target="_blank">lottie-react-native</a> - official
+- <a href="https://github.com/LottieFiles/dotlottie-ios" target="_blank">dotlottie-ios</a>
 
 ##### Desktop
 
 - <a href="https://github.com/windows-toolkit/Lottie-Windows" target="_blank">lottie-windows</a>
 - <a href="https://github.com/azchohfi/LottieUWP" target="_blank">Lottie for UWP</a> - by @azchohfi
+- <a href="https://lottiefiles.com/desktop" target="_blank">LottieFiles Desktop</a>
 
 ##### Multi-Platform
 
@@ -89,5 +93,5 @@ image: null
 - <a href="https://github.com/xxmuaddib/lottie-colorify" target="_blank">lottie-colorify</a> - Change lottie colors from code
 - <a href="https://github.com/samuelOsborne/Lottie-interactive" target="_blank">lottie-interactive</a> - Custom web element to add interactivity to your Lottie Animations
 - <a href="https://github.com/CoderVishalSehgal/lottie-toggles" target="_blank">lottie-toggles</a> - Utility library to easily use the various switch and toggle animations
-- <a href="https://github.com/lottiefiles/relottie" target="_blank">relottie</a> - Lottie processor powered by plugins 
+- <a href="https://github.com/lottiefiles/relottie" target="_blank">relottie</a> - Lottie processor powered by plugins
 - <a href="https://gitlab.com/mattbas/python-lottie" target="_blank">python-lottie</a> - Library to manipulate Lottie animate and convert between file formats
