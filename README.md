@@ -2,9 +2,23 @@
 
 The official website for [Lottie Animation Community][lac]
 
+#### Notes:
+
+- Deployed to GitHub Pages: https://lottie.github.io/
+- The design is created by https://github.com/inerds => [LAC-WebsiteUI.pdf](https://github.com/lottie/lottie.github.io/files/14061183/LAC-WebsiteUI.pdf)
+- The [Bootstrap](https://getbootstrap.com/) has been picked because [lottie-spec][] uses it
+
+### Features:
+
+> This boilerplate [gatsby-starter-blog](https://www.gatsbyjs.com/starters/gatsbyjs/gatsby-starter-blog/) has been used as the base
+- Basic setup for a full-featured blog for news page
+- Support for an RSS feed
+- Automatic optimization of images in Markdown posts
+- Includes Gatsby Head API to allow editing site meta tags
+
 ## 🚀 Quick start
 
-This boilerplate [gatsby-starter-blog](https://www.gatsbyjs.com/starters/gatsbyjs/gatsby-starter-blog/) has been used as the base.
+> This boilerplate [gatsby-starter-blog](https://www.gatsbyjs.com/starters/gatsbyjs/gatsby-starter-blog/) has been used as the base.
 
 1.  **Start developing.**
 
@@ -12,7 +26,7 @@ This boilerplate [gatsby-starter-blog](https://www.gatsbyjs.com/starters/gatsbyj
 
     ```shell
     npm install
-    gatsby develop
+    npm start
     ```
 
 1.  **Open the source code and start editing!**
@@ -23,12 +37,11 @@ This boilerplate [gatsby-starter-blog](https://www.gatsbyjs.com/starters/gatsbyj
 
     Open the directory in your code editor of choice and edit `src/pages/index.js`. Save your changes and the browser will update in real time!
 
-## 🧐 What's inside?
+## What's inside?
 
-A quick look at the top-level files and directories you'll see in a typical Gatsby project.
+A quick look at the top-level files and directories you'll see in the project.
 
     .
-    ├── node_modules
     ├── src
     ├── .gitignore
     ├── gatsby-browser.js
@@ -39,9 +52,9 @@ A quick look at the top-level files and directories you'll see in a typical Gats
     ├── package.json
     └── README.md
 
-1.  **`/node_modules`**: This directory contains all of the modules of code that your project depends on (npm packages) are automatically installed.
+1.  **`/src`**: This directory contains all of the code related to what you will see on the front-end of your site (what you see in the browser) such as your site header or a page template. `src` is a convention for “source code”.
 
-1.  **`/src`**: This directory will contain all of the code related to what you will see on the front-end of your site (what you see in the browser) such as your site header or a page template. `src` is a convention for “source code”.
+1.  **`/content`**: This directory contains all of the markdown files related to the site, such as every `news` posts.
 
 1.  **`.gitignore`**: This file tells git which files it should not track / not maintain a version history for.
 
@@ -53,7 +66,7 @@ A quick look at the top-level files and directories you'll see in a typical Gats
 
 1.  **`gatsby-ssr.js`**: This file is where Gatsby expects to find any usage of the [Gatsby server-side rendering APIs](https://www.gatsbyjs.com/docs/reference/config-files/gatsby-ssr/) (if any). These allow customization of default Gatsby settings affecting server-side rendering.
 
-1.  **`LICENSE`**: This Gatsby starter is licensed under the 0BSD license. This means that you can see this file as a placeholder and replace it with your own license.
+1.  **`LICENSE`**: Copyright
 
 1.  **`package.json`**: A manifest file for Node.js projects, which includes things like metadata (the project’s name, author, etc). This manifest is how npm knows which packages to install for your project.
 
@@ -68,3 +81,5 @@ Any contributions are welcome.
 [MIT](license) @ Lottie Animation Community
 
 [lac]: https://github.com/lottie
+
+[lottie-spec]: https://github.com/lottie/lottie-spec
