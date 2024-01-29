@@ -19,7 +19,7 @@ export const Header = () => {
             }
           }
         }
-        allMarkdownRemark(sort: { frontmatter: { date: DESC } }) {
+        allMarkdownRemark(filter: { fields: { contentType: { eq: "news" } } }) {
           nodes {
             fields {
               slug
@@ -32,9 +32,9 @@ export const Header = () => {
 
   const newsRoutePrefix = `/${ROUTES.news.route}`
   const newsRoute =
-    (allMarkdownRemark.nodes || []).length === 0
-      ? newsRoutePrefix
-      : allMarkdownRemark.nodes[0].fields?.slug
+    (allMarkdownRemark.nodes || []).length === 1
+      ? allMarkdownRemark.nodes[0].fields?.slug
+      : newsRoutePrefix
   const { siteMetadata } = site
   const { urls } = siteMetadata
 

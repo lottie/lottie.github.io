@@ -22,7 +22,7 @@ export const Footer = () => {
             }
           }
         }
-        allMarkdownRemark(sort: { frontmatter: { date: DESC } }) {
+        allMarkdownRemark(filter: { fields: { contentType: { eq: "news" } } }) {
           nodes {
             fields {
               slug
@@ -35,9 +35,9 @@ export const Footer = () => {
 
   const newsRoutePrefix = `/${ROUTES.news.route}`
   const newsRoute =
-    (allMarkdownRemark.nodes || []).length === 0
-      ? newsRoutePrefix
-      : allMarkdownRemark.nodes[0].fields?.slug
+    (allMarkdownRemark.nodes || []).length === 1
+      ? allMarkdownRemark.nodes[0].fields?.slug
+      : newsRoutePrefix
   const { siteMetadata } = site
   const { urls, author } = siteMetadata
 
@@ -69,7 +69,11 @@ export const Footer = () => {
             </Nav.Link>
           </Nav.Item>
           <Nav.Item>
-            <Nav.Link as={Link} className="text-capitalize" to={newsRoute || ''}>
+            <Nav.Link
+              as={Link}
+              className="text-capitalize"
+              to={newsRoute || ""}
+            >
               {ROUTES.news.text}
             </Nav.Link>
           </Nav.Item>
