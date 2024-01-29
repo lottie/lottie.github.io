@@ -47,7 +47,12 @@ export default Implementations
  *
  * See: https://www.gatsbyjs.com/docs/reference/built-in-components/gatsby-head/
  */
-export const Head = () => <Seo title="All Implementations posts" />
+export const Head = () => (
+  <Seo
+    title="Implementations"
+    description="A curated list of awesome things related to Lottie"
+  />
+)
 
 export const pageQuery = graphql`
   query ImplementationsPage($id: String!) {

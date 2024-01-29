@@ -102,7 +102,12 @@ export default NewsIndex
  *
  * See: https://www.gatsbyjs.com/docs/reference/built-in-components/gatsby-head/
  */
-export const Head = () => <Seo title="All news posts" />
+export const Head = () => (
+  <Seo
+    title="News"
+    description="Latest updates from Lottie Animation Community"
+  />
+)
 
 export const pageQuery = graphql`
   {
