@@ -14,7 +14,7 @@ const NotFoundPage = () => {
         <Container className="py-5">
           <Row>
             <Col className="py-5">
-              <h1 className="mb-3 h2">404: Not Found</h1>
+              <h1 className="mb-3 h2">Not Found</h1>
               <h5 className="fw-normal">
                 You just hit a route that doesn&#39;t exist
               </h5>
@@ -26,6 +26,6 @@ const NotFoundPage = () => {
   )
 }
 
-export const Head = () => <Seo title="404: Not Found" />
+export const Head = () => <Seo title="Not Found" />
 
 export default NotFoundPage
