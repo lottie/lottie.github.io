@@ -24,7 +24,7 @@ image: null
 
 ##### For Design Tools
 
-- <a href="https://store.framer.com/package/airbnb/lottie" target="_blank">FramerX Lottie Package</a>
+- <a href="https://www.framer.com/plugins/lottie" target="_blank">Lottie - Framer Plugin</a>
 - <a href="https://www.protopie.io/learn/basics/" target="_blank">Protopie Lottie Layer</a>
 - <a href="https://www.figma.com/community/plugin/1307008445393559148" target="_blank">Figma to Lottie</a> by @lottielab
 - <a href="https://university.webflow.com/courses/after-effects-lottie" target="_blank">Lottie Support for Webflow </a>
@@ -46,12 +46,13 @@ image: null
 
 - <a href="https://github.com/airbnb/lottie-web" target="_blank">lottie-web</a> - official
 - <a href="https://github.com/LottieFiles/lottie-player" target="_blank">lottie-player</a> - by @lottiefiles
-- <a href="https://github.com/LottieFiles/lottie-react" target="_blank">lottie-react</a> - by @lottiefiles
+- <a href="https://github.com/LottieFiles/lottie-react" target="_blank">react-lottie-player</a> - by @lottiefiles
 - <a href="https://github.com/gamote/lottie-react" target="_blank">lottie-react</a> - by @gamote
 - <a href="https://github.com/LottieFiles/svelte-lottie-player" target="_blank">svelte-lottie-player</a> - by @lottiefiles
 - <a href="https://github.com/chenqingspring/vue-lottie" target="_blank">vue-lottie</a> - by @chenqingspring
 - <a href="https://github.com/chenqingspring/ng-lottie" target="_blank">ng-lottie</a> - Lottie for Angular by @chenqingspring
 - <a href="https://github.com/LottieFiles/dotlottie-web"  target="_blank">dotlottie-web</a>
+- <a href="https://github.com/chenqingspring/react-lottie"  target="_blank">react-lottie</a>
 
 ##### Android
 
@@ -78,7 +79,7 @@ image: null
 ##### Multi-Platform
 
 - <a href="https://www.qt.io/blog/2019/03/08/announcing-qtlottie" target="_blank">QT</a>
-- <a href="https://skia.org/user/modules/skottie" target="_blank">Skottie</a> - Lottie Animation Player
+- <a href="https://skia.org/docs/user/modules/skottie/" target="_blank">Skottie</a> - Lottie Animation Player
 - <a href="https://www.thorvg.org/" target="_blank">Thorvg</a> - for rendering vector-based scenes and animations, including SVG and Lottie formats
 
 <br/>
