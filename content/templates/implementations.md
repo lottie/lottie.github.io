@@ -35,6 +35,9 @@ image: null
 - <a href="https://www.keyshapeapp.com/" target="_blank">Keyshape for Mac </a>
 - <a href="https://www.haikuforteams.com/animator/" target="_blank">Animator</a> by @haikuforteams
 - <a href="https://glaxnimate.mattbas.org/ " target="_blank">Glaxnimate </a> by @mbasaglia
+- <a href="https://www.lottielab.com/" target="_blank">LottieLab</a>
+- <a href="https://jitter.video/" target="_blank">Jitter</a>
+- <a href="https://phase.com/" target="_blank">Phase</a>
 
 <br/>
 
@@ -81,6 +84,7 @@ image: null
 - <a href="https://www.qt.io/blog/2019/03/08/announcing-qtlottie" target="_blank">QT</a>
 - <a href="https://skia.org/docs/user/modules/skottie/" target="_blank">Skottie</a> - Lottie Animation Player
 - <a href="https://www.thorvg.org/" target="_blank">Thorvg</a> - for rendering vector-based scenes and animations, including SVG and Lottie formats
+- <a href="https://github.com/Samsung/rlottie" target="_blank">rlottie</a> - by @samsung
 
 <br/>
 
