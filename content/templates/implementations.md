@@ -26,7 +26,6 @@ image: null
 
 - <a href="https://www.framer.com/plugins/lottie" target="_blank">Lottie - Framer Plugin</a>
 - <a href="https://www.protopie.io/learn/basics/" target="_blank">Protopie Lottie Layer</a>
-- <a href="https://www.figma.com/community/plugin/1307008445393559148" target="_blank">Figma to Lottie</a> by @lottielab
 - <a href="https://university.webflow.com/courses/after-effects-lottie" target="_blank">Lottie Support for Webflow </a>
 - <a href="https://www.figma.com/community/plugin/809860933081065308" target="_blank">Figma to Lottie</a> by @lottiefiles
 
