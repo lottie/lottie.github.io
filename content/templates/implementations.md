@@ -22,6 +22,10 @@ image: null
 - <a href="https://lottiefiles.com/ae" target="_blank">LottieFiles AE Plugin</a> for Adobe After Effects
 - <a href="https://aescripts.com/bodymovin/" target="_blank">Bodymovin</a> for Adobe After Effects
 - <a href="https://www.figma.com/community/plugin/809860933081065308" target="_blank">Figma to Lottie</a> by @lottiefiles
+- <a href="https://www.figma.com/community/plugin/988173868842375596" target="_blank">Aninix</a> - Figma Plugin
+- <a href="https://www.figma.com/community/plugin/1307008445393559148" target="_blank">Figma to Lottie</a> - by @lottielab
+- <a href="https://www.figma.com/community/plugin/905358215497822854" target="_blank">Flow Exporterx</a> - Figma Plugin
+- <a href="https://www.figma.com/community/plugin/1093136289410156578" target="_blank">Fable</a> - Figma Plugin
 
 ##### For Design Tools
 
