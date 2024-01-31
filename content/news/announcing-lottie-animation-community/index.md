@@ -13,6 +13,6 @@ LAC operates as a project under the governance of the Joint Development Foundati
 
 The current LAC steering committee members are Hernan Torrisi, Google, LottieFiles, Airbnb, Salih Abdul-Karim and Gabriel Peal. Our community is growing with new members joining who share our commitment to the advancement of the Lottie File Format.
 
-We invite like-minded organizations and individuals to join us at [https://github.com/lottie-animation-community](https://github.com/lottie-animation-community).
+We invite like-minded organizations and individuals to join us at [https://github.com/lottie](https://github.com/lottie).
 
 Together, we can make the digital world a more animated place.
