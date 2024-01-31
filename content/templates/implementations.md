@@ -84,7 +84,7 @@ image: null
 
 ##### Multi-Platform
 
-- <a href="https://www.qt.io/blog/2019/03/08/announcing-qtlottie" target="_blank">QT</a>
+- <a href="https://www.qt.io/blog/2019/03/08/announcing-qtlottie" target="_blank">Qt</a>
 - <a href="https://skia.org/docs/user/modules/skottie/" target="_blank">Skottie</a> - Lottie Animation Player
 - <a href="https://www.thorvg.org/" target="_blank">Thorvg</a> - for rendering vector-based scenes and animations, including SVG and Lottie formats
 - <a href="https://github.com/Samsung/rlottie" target="_blank">rlottie</a> - by @samsung
