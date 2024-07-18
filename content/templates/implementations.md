@@ -50,8 +50,8 @@ image: null
 
 ##### Web
 
-- <a href="https://github.com/airbnb/lottie-web" target="_blank">lottie-web</a> - official
-- <a href="https://github.com/LottieFiles/lottie-player" target="_blank">lottie-player</a> - by @lottiefiles
+- <a href="https://github.com/airbnb/lottie-web" target="_blank">lottie-web</a> by Hernan
+- <a href="https://github.com/LottieFiles/lottie-player" target="_blank">lottie-player</a> - by LottieFiles
 - <a href="https://github.com/LottieFiles/lottie-react" target="_blank">react-lottie-player</a> - by @lottiefiles
 - <a href="https://github.com/gamote/lottie-react" target="_blank">lottie-react</a> - by @gamote
 - <a href="https://github.com/LottieFiles/svelte-lottie-player" target="_blank">svelte-lottie-player</a> - by @lottiefiles
@@ -62,8 +62,8 @@ image: null
 
 ##### Android
 
-- <a href="https://github.com/airbnb/lottie-android" target="_blank">lottie-android</a> - official
-- <a href="https://github.com/airbnb/lottie-react-native" target="_blank">lottie-react-native</a> - official
+- <a href="https://github.com/airbnb/lottie-android" target="_blank">lottie-android</a> by Airbnb
+- <a href="https://github.com/airbnb/lottie-react-native" target="_blank">lottie-react-native</a> by Airbnb
 - <a href="https://github.com/martijn00/LottieXamarin" target="_blank">lottie-xamarin</a>
 - <a href="https://github.com/bradmartin/nativescript-lottie" target="_blank">native-script-lottie</a>
 - <a href="https://github.com/m1ga/ti.animation" target="_blank">ti.animation</a> - Appcelerator Titanium bindings
@@ -72,8 +72,8 @@ image: null
 
 ##### iOS
 
-- <a href="https://github.com/airbnb/lottie-ios" target="_blank">lottie-ios</a> - official
-- <a href="https://github.com/airbnb/lottie-react-native" target="_blank">lottie-react-native</a> - official
+- <a href="https://github.com/airbnb/lottie-ios" target="_blank">lottie-ios</a> by Airbnb
+- <a href="https://github.com/airbnb/lottie-react-native" target="_blank">lottie-react-native</a> by Airbnb
 - <a href="https://github.com/LottieFiles/dotlottie-ios" target="_blank">dotlottie-ios</a>
 
 ##### Desktop
