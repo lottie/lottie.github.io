@@ -38,6 +38,7 @@ image: null
 - <a href="https://www.keyshapeapp.com/" target="_blank">Keyshape for Mac</a>
 - <a href="https://www.haikuforteams.com/animator/" target="_blank">Animator</a>
 - <a href="https://glaxnimate.mattbas.org/" target="_blank">Glaxnimate</a>
+- <a href="https://lottiefiles.com/lottie-creator" target="_blank">Lottie Creator</a> by LottieFiles
 - <a href="https://www.lottielab.com/" target="_blank">LottieLab</a>
 - <a href="https://jitter.video/" target="_blank">Jitter</a>
 - <a href="https://phase.com/" target="_blank">Phase</a>
