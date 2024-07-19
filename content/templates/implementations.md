@@ -51,7 +51,7 @@ image: null
 
 ##### Web
 
-- <a href="https://github.com/airbnb/lottie-web" target="_blank">lottie-web</a> by Airbnb
+- <a href="https://github.com/airbnb/lottie-web" target="_blank">lottie-web</a>
 - <a href="https://github.com/LottieFiles/lottie-player" target="_blank">lottie-player</a> - by LottieFiles
 - <a href="https://github.com/LottieFiles/lottie-react" target="_blank">react-lottie-player</a> - by LottieFiles
 - <a href="https://github.com/gamote/lottie-react" target="_blank">lottie-react</a>
