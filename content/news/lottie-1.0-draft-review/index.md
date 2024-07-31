@@ -13,6 +13,6 @@ The public review period for the Lottie v1.0 draft will be from July 29 to Augus
 
 #### About Lottie v1.0
 
-Version 1.0 of the Lottie Animation Format is the result of the collaborative work of many Lottie stakeholders, since the forming of the Lottie Animation Community and working group. The goal of v1.0 is to include all well known, commonly implemented, documentable features, to establish a baseline for the format and pave the way for future iterations. We envision implementers may want to declare a profile referencing the spec version, to allow for some variance in feature support while driving API consistency and schema reliability.
+Version 1.0 of the Lottie Animation Format is the result of the collaborative work of many Lottie stakeholders, since the forming of the Lottie Animation Community and working group. The goal of v1.0 is to include all well known, commonly implemented, documentable features, to establish a baseline for the format and pave the way for future iterations. Features that are not widely supported will not be in the 1.0 specification but may be added in a later revision. We envision implementers may want to declare a profile referencing the spec version, to allow for some variance in feature support while driving API consistency and schema reliability.
 
 Partner with us on this significant milestone for Lottie!
