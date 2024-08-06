@@ -2,7 +2,7 @@
 title: Lottie Animation Community announces public review draft of Lottie v1.0 specification
 date: "2024-08-06T12:01:01.284Z"
 description: "The Lottie Animation Community (LAC), a Joint Development Foundation project, is pleased to announce the public review draft of the v1.0 Lottie JSON specification."
-featuredImage: lac.png
+featuredImage: draft_proposal.png
 ---
 
 ### Lottie Animation Community announces public review draft of Lottie v1.0 specification
