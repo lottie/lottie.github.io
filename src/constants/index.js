@@ -2,7 +2,7 @@ export const ROUTES = {
   specification: {
     route: "/specification",
     text: "Specification",
-    text2: 'Read the Spec'
+    text2: "Read the Spec",
   },
   community: {
     route: "/#community",
@@ -15,6 +15,10 @@ export const ROUTES = {
   news: {
     route: "/news",
     text: "News",
+  },
+  roadmap: {
+    route: "/roadmap",
+    text: "Roadmap",
   },
   contribute: {
     // route: "contribute",
