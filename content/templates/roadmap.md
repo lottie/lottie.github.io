@@ -11,14 +11,14 @@ The v1.0 specification contains features that are commonly used by current playe
 
 Features in 1.0 release:
 
-- **Layers** - Shapes, Solids, Images, Precomposition
+- **Layers** - Shapes, Solids, Images, Precomposition, Null
 - **Shapes** - Rectangle, Ellipse, Path, Polystar
 - **Shape Styles and Modifiers** - Fill, Stroke, Gradient Fill, Gradient Stroke, Trim Path
 - **Shape Grouping** - Group, Transform
 - **Transforms** - Position, Split Position, Rotation, Scale, Opacity, Skew, Skew Axis
 - **Assets** - Precomposition, Image
 - **Time Remap and Stretch**
-- **Masks**
+- **Masks and Mattes**
 - **Slots**
 
 ### v1.1 (H1 2025)
@@ -33,3 +33,4 @@ Features in 1.0 release:
 - Metadata
 - Blend modes
 - Expressions
+- Additional modifiers
