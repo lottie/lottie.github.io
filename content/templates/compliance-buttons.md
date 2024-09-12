@@ -15,11 +15,11 @@ Use of these buttons does not indicate endorsement from the Lottie Animation Com
 
 ### Light mode
 
-![lottie-1.0-light-28.png](../../src/assets/buttons/lottie-1.0-light-28.png)
+![lottie-1.0-light-28.png](../../src/assets/compliance-buttons/lottie-1.0-light-28.png)
 
-![lottie-1.0-light-56.png](../../src/assets/buttons/lottie-1.0-light-56.png)
+![lottie-1.0-light-56.png](../../src/assets/compliance-buttons/lottie-1.0-light-56.png)
 
-![lottie-1.0-light-112.png](../../src/assets/buttons/lottie-1.0-light-112.png)
+![lottie-1.0-light-112.png](../../src/assets/compliance-buttons/lottie-1.0-light-112.png)
 
 <svg width="288" height="111" viewBox="0 0 72 28" fill="none" xmlns="http://www.w3.org/2000/svg">
     <style>
@@ -39,11 +39,11 @@ Use of these buttons does not indicate endorsement from the Lottie Animation Com
 
 ### Dark mode
 
-![lottie-1.0-dark-28.png](../../src/assets/buttons/lottie-1.0-dark-28.png)
+![lottie-1.0-dark-28.png](../../src/assets/compliance-buttons/lottie-1.0-dark-28.png)
 
-![lottie-1.0-dark-56.png](../../src/assets/buttons/lottie-1.0-dark-56.png)
+![lottie-1.0-dark-56.png](../../src/assets/compliance-buttons/lottie-1.0-dark-56.png)
 
-![lottie-1.0-dark-112.png](../../src/assets/buttons/lottie-1.0-dark-112.png)
+![lottie-1.0-dark-112.png](../../src/assets/compliance-buttons/lottie-1.0-dark-112.png)
 
 <svg width="288" height="111" viewBox="0 0 72 28" fill="none" xmlns="http://www.w3.org/2000/svg">
     <rect width="72" height="28" rx="8" fill="black"/>

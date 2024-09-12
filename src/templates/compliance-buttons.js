@@ -48,7 +48,12 @@ export default Roadmap
  *
  * See: https://www.gatsbyjs.com/docs/reference/built-in-components/gatsby-head/
  */
-export const Head = () => <Seo title="Buttons" description="Buttons" />
+export const Head = () => (
+  <Seo
+    title="Compliance Buttons"
+    description="Buttons to represent compliance with the lottie specs"
+  />
+)
 
 export const pageQuery = graphql`
   query ImplementationsPage($id: String!) {
