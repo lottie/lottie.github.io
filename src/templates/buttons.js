@@ -29,6 +29,7 @@ const Roadmap = ({ data }) => {
         <Row>
           <Col>
             <section
+              id="compliance-buttons-content"
               className="py-5"
               dangerouslySetInnerHTML={{ __html: html }}
               itemProp="articleBody"
