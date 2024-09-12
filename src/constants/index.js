@@ -24,4 +24,8 @@ export const ROUTES = {
     // route: "contribute",
     text: "Contribute",
   },
+  buttons: {
+    route: "/compliance-buttons",
+    text: "Compliance Buttons",
+  },
 }
