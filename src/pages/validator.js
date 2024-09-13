@@ -5,6 +5,7 @@ import Row from "react-bootstrap/Row"
 import Col from "react-bootstrap/Col"
 import Tabs from "react-bootstrap/Tabs"
 import Tab from "react-bootstrap/Tab"
+import Form from "react-bootstrap/Form"
 
 import Layout from "../components/layout"
 import Seo from "../components/seo"
@@ -32,21 +33,37 @@ const ValidatorPage = () => {
       </section>
       <Container className="py-5 mb-5">
         <Row>
-          <Col>
+          <Col md={8} className="mb-3">
             <Tabs defaultActiveKey="url" id="justify-tab-example" justify>
-              <Tab eventKey="url" title="Url" className={tabCssClass}>
+              <Tab eventKey="url" title="Paste URL" className={tabCssClass}>
                 Tab content for url
               </Tab>
-              <Tab eventKey="file" title="File" className={tabCssClass}>
+              <Tab eventKey="file" title="Upload File" className={tabCssClass}>
                 Tab content for file
               </Tab>
-              <Tab eventKey="text" title="Text" className={tabCssClass}>
+              <Tab eventKey="text" title="Paste Text" className={tabCssClass}>
                 Tab content for Text
               </Tab>
-              <Tab eventKey="options" title="Options" className={tabCssClass}>
-                Tab content for Options
-              </Tab>
             </Tabs>
+          </Col>
+          <Col md={4} className="mb-3">
+            <h6 className="pt-2">Options</h6>
+            <div>
+              <Form.Check
+                inline
+                label="Warn about unknown object types"
+                name="check-warning-type"
+                type="checkbox"
+                id="check-warning-type"
+              />
+              <Form.Check
+                inline
+                label="Warn about unknown properties"
+                name="check-warning-property"
+                type="checkbox"
+                id="check-warning-property"
+              />
+            </div>
           </Col>
         </Row>
       </Container>
