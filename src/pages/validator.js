@@ -7,6 +7,9 @@ import Tabs from "react-bootstrap/Tabs"
 import Tab from "react-bootstrap/Tab"
 import Form from "react-bootstrap/Form"
 import Table from "react-bootstrap/Table"
+import Button from "react-bootstrap/Button"
+import ButtonGroup from "react-bootstrap/ButtonGroup"
+import FloatingLabel from "react-bootstrap/FloatingLabel"
 
 import Layout from "../components/layout"
 import Seo from "../components/seo"
@@ -17,7 +20,7 @@ const content = {
     "Validates a given Lottie JSON file against the Lottie specification version",
 }
 
-const tabCssClass = "border border-top-0 rounded-bottom p-3 shadow"
+const tabCssClass = "border border-top-0 rounded-bottom p-4 shadow"
 
 const ValidatorPage = () => {
   return (
@@ -36,20 +39,35 @@ const ValidatorPage = () => {
         <Row>
           <Col md={8} className="mb-3">
             <Tabs defaultActiveKey="url" id="justify-tab-example" justify>
-              <Tab eventKey="url" title="Paste URL" className={tabCssClass}>
-                Tab content for url
+              <Tab eventKey="url" title="URL" className={tabCssClass}>
+                <Form.Control
+                  aria-label="Example text with button addon"
+                  aria-describedby="basic-addon1"
+                  placeholder="Paste Lottie JSON URL"
+                />
               </Tab>
-              <Tab eventKey="file" title="Upload File" className={tabCssClass}>
-                Tab content for file
+              <Tab eventKey="file" title="File" className={tabCssClass}>
+                <Form.Group controlId="formFileLg">
+                  <Form.Control type="file" accept="application/JSON" />
+                </Form.Group>
               </Tab>
-              <Tab eventKey="text" title="Paste Text" className={tabCssClass}>
-                Tab content for Text
+              <Tab eventKey="text" title="Text" className={tabCssClass}>
+                <FloatingLabel
+                  controlId="floatingTextarea"
+                  label="Lottie JSON text"
+                >
+                  <Form.Control
+                    as="textarea"
+                    placeholder="Paste Lottie JSON text"
+                    style={{ height: "100px" }}
+                  />
+                </FloatingLabel>
               </Tab>
             </Tabs>
           </Col>
           <Col md={4} className="mb-3">
             <h6 className="pt-2">Options</h6>
-            <div>
+            <div className="mb-2">
               <Form.Check
                 inline
                 label="Warn about unknown object types"
@@ -65,6 +83,12 @@ const ValidatorPage = () => {
                 id="check-warning-property"
               />
             </div>
+            <ButtonGroup aria-label="valiate buttons" size="sm">
+              <Button>validate</Button>
+              <Button variant="outline-primary" disabled>
+                reset
+              </Button>
+            </ButtonGroup>
           </Col>
           <Col>
             <Table striped bordered hover className="shadow">
