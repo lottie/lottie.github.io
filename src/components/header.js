@@ -66,6 +66,15 @@ export const Header = () => {
               <Nav.Link
                 as={Link}
                 className="text-capitalize"
+                to={ROUTES.buttons.route}
+              >
+                {ROUTES.buttons.text}
+              </Nav.Link>
+            </Nav.Item>
+            <Nav.Item>
+              <Nav.Link
+                as={Link}
+                className="text-capitalize"
                 to={ROUTES.roadmap.route}
               >
                 {ROUTES.roadmap.text}
