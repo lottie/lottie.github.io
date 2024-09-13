@@ -64,6 +64,11 @@ export const Footer = () => {
             </Nav.Link>
           </Nav.Item>
           <Nav.Item>
+            <Nav.Link as={Link} to={ROUTES.roadmap.route} target="_blank">
+              {ROUTES.roadmap.text}
+            </Nav.Link>
+          </Nav.Item>
+          <Nav.Item>
             <Nav.Link as={Link} to={ROUTES.community.route} target="_blank">
               {ROUTES.community.text}
             </Nav.Link>
