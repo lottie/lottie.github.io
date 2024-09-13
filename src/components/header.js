@@ -81,6 +81,15 @@ export const Header = () => {
               </Nav.Link>
             </Nav.Item>
             <Nav.Item>
+              <Nav.Link
+                as={Link}
+                className="text-capitalize"
+                to={ROUTES.validator.route}
+              >
+                {ROUTES.validator.text}
+              </Nav.Link>
+            </Nav.Item>
+            <Nav.Item>
               <Nav.Link as={Link} to={ROUTES.community.route} target="_blank">
                 {ROUTES.community.text}
               </Nav.Link>
