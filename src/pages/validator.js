@@ -6,6 +6,7 @@ import Col from "react-bootstrap/Col"
 import Tabs from "react-bootstrap/Tabs"
 import Tab from "react-bootstrap/Tab"
 import Form from "react-bootstrap/Form"
+import Table from "react-bootstrap/Table"
 
 import Layout from "../components/layout"
 import Seo from "../components/seo"
@@ -64,6 +65,28 @@ const ValidatorPage = () => {
                 id="check-warning-property"
               />
             </div>
+          </Col>
+          <Col>
+            <Table striped bordered hover className="shadow">
+              <thead>
+                <tr>
+                  <th>Path</th>
+                  <th>Named Path</th>
+                  <th>Severity</th>
+                  <th>Message</th>
+                  <th>Docs</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>1</td>
+                  <td>2</td>
+                  <td>3</td>
+                  <td>4</td>
+                  <td>5</td>
+                </tr>
+              </tbody>
+            </Table>
           </Col>
         </Row>
       </Container>
