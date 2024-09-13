@@ -14,7 +14,7 @@ import Seo from "../components/seo"
 const content = {
   title: "Lottie Validator",
   description:
-    "Validates a given Lottie JSON file against the Lottie specification version.",
+    "Validates a given Lottie JSON file against the Lottie specification version",
 }
 
 const tabCssClass = "border border-top-0 rounded-bottom p-3 shadow"
