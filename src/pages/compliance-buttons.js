@@ -55,7 +55,10 @@ const ComplianceButtonsPage = () => {
                 <tr>
                   <th>Small</th>
                   <td>
-                    <a href="/compliance-buttons/lottie-1.0-light-28.png">
+                    <a
+                      href="/compliance-buttons/lottie-1.0-light-28.png"
+                      target="_blank"
+                    >
                       <img
                         src="/compliance-buttons/lottie-1.0-light-28.png"
                         alt="lottie-1.0-light-28.png"
@@ -63,7 +66,10 @@ const ComplianceButtonsPage = () => {
                     </a>
                   </td>
                   <td>
-                    <a href="/compliance-buttons/lottie-1.0-dark-28.png">
+                    <a
+                      href="/compliance-buttons/lottie-1.0-dark-28.png"
+                      target="_blank"
+                    >
                       <img
                         src="/compliance-buttons/lottie-1.0-dark-28.png"
                         alt="lottie-1.0-dark-28.png"
@@ -74,7 +80,10 @@ const ComplianceButtonsPage = () => {
                 <tr>
                   <th>Medium</th>
                   <td>
-                    <a href="/compliance-buttons/lottie-1.0-light-56.png">
+                    <a
+                      href="/compliance-buttons/lottie-1.0-light-56.png"
+                      target="_blank"
+                    >
                       <img
                         src="/compliance-buttons/lottie-1.0-light-56.png"
                         alt="lottie-1.0-light-56.png"
@@ -82,7 +91,10 @@ const ComplianceButtonsPage = () => {
                     </a>
                   </td>
                   <td>
-                    <a href="/compliance-buttons/lottie-1.0-dark-56.png">
+                    <a
+                      href="/compliance-buttons/lottie-1.0-dark-56.png"
+                      target="_blank"
+                    >
                       <img
                         src="/compliance-buttons/lottie-1.0-dark-56.png"
                         alt="lottie-1.0-dark-56.png"
@@ -93,7 +105,10 @@ const ComplianceButtonsPage = () => {
                 <tr>
                   <th>Large</th>
                   <td>
-                    <a href="/compliance-buttons/lottie-1.0-light-112.png">
+                    <a
+                      href="/compliance-buttons/lottie-1.0-light-112.png"
+                      target="_blank"
+                    >
                       <img
                         src="/compliance-buttons/lottie-1.0-light-112.png"
                         alt="lottie-1.0-light-112.png"
@@ -101,7 +116,10 @@ const ComplianceButtonsPage = () => {
                     </a>
                   </td>
                   <td>
-                    <a href="/compliance-buttons/lottie-1.0-dark-112.png">
+                    <a
+                      href="/compliance-buttons/lottie-1.0-dark-112.png"
+                      target="_blank"
+                    >
                       <img
                         src="/compliance-buttons/lottie-1.0-dark-112.png"
                         alt="lottie-1.0-dark-112.png"
@@ -112,7 +130,10 @@ const ComplianceButtonsPage = () => {
                 <tr className="iframe-row">
                   <th>Scalable</th>
                   <td>
-                    <a href="/compliance-buttons/lottie-1.0-light.svg">
+                    <a
+                      href="/compliance-buttons/lottie-1.0-light.svg"
+                      target="_blank"
+                    >
                       <iframe
                         src="/compliance-buttons/lottie-1.0-light.svg"
                         title="lottie-1.0-light.svg"
@@ -120,7 +141,10 @@ const ComplianceButtonsPage = () => {
                     </a>
                   </td>
                   <td>
-                    <a href="/compliance-buttons/lottie-1.0-dark.svg">
+                    <a
+                      href="/compliance-buttons/lottie-1.0-dark.svg"
+                      target="_blank"
+                    >
                       <iframe
                         src="/compliance-buttons/lottie-1.0-dark.svg"
                         title="lottie-1.0-dark.svg"
