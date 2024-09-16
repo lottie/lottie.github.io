@@ -16,7 +16,7 @@ const ComplianceButtonsPage = () => {
           <Row>
             <Col className="py-5">
               <h1 className="mb-3 h2">Compliance Buttons</h1>
-              <div className="fw-normal">
+              <div className="fw-normal h5">
                 Buttons to represent compliance with the lottie specs
               </div>
             </Col>
