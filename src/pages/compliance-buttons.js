@@ -7,10 +7,7 @@ import Col from "react-bootstrap/Col"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 
-const ComplianceButtons = ({ data }) => {
-  const { page } = data
-  const { frontmatter } = page
-
+const ComplianceButtonsPage = () => {
   return (
     <Layout>
       <section className="bg-primary-subtle">
@@ -143,7 +140,7 @@ const ComplianceButtons = ({ data }) => {
   )
 }
 
-export default ComplianceButtons
+export default ComplianceButtonsPage
 
 /**
  * Head export to define metadata for the page
