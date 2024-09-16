@@ -123,27 +123,27 @@ const ComplianceButtonsPage = () => {
                 </tr>
                 <tr className="iframe-row">
                   <th>Scalable</th>
-                  <td>
+                  <td className="position-relative">
                     <a
                       href="/compliance-buttons/lottie-1.0-light.svg"
                       target="_blank"
-                    >
-                      <iframe
-                        src="/compliance-buttons/lottie-1.0-light.svg"
-                        title="lottie-1.0-light.svg"
-                      ></iframe>
-                    </a>
+                      className="stretched-link"
+                    ></a>
+                    <iframe
+                      src="/compliance-buttons/lottie-1.0-light.svg"
+                      title="lottie-1.0-light.svg"
+                    ></iframe>
                   </td>
-                  <td>
+                  <td className="position-relative">
                     <a
                       href="/compliance-buttons/lottie-1.0-dark.svg"
                       target="_blank"
-                    >
-                      <iframe
-                        src="/compliance-buttons/lottie-1.0-dark.svg"
-                        title="lottie-1.0-dark.svg"
-                      ></iframe>
-                    </a>
+                      className="stretched-link"
+                    ></a>
+                    <iframe
+                      src="/compliance-buttons/lottie-1.0-dark.svg"
+                      title="lottie-1.0-dark.svg"
+                    ></iframe>
                   </td>
                 </tr>
               </tbody>
