@@ -3,6 +3,7 @@ import * as React from "react"
 import Container from "react-bootstrap/Container"
 import Row from "react-bootstrap/Row"
 import Col from "react-bootstrap/Col"
+import Table from "react-bootstrap/Table"
 
 import Layout from "../components/layout"
 import Seo from "../components/seo"
@@ -36,14 +37,7 @@ const ComplianceButtonsPage = () => {
               Animation Community.
             </p>
             <h2>1.0</h2>
-            <style>
-              #buttons-1-0 td, #buttons-1-0 th &#123; text-align: center;
-              border: 1px solid #ccc; padding: 5px; &#125; #buttons-1-0 th
-              &#123; background: #ddd; &#125; .iframe-row a &#123; display:
-              inline-block; height: 100%; &#125; .iframe-row iframe &#123;
-              pointer-events: none; &#125;
-            </style>
-            <table id="buttons-1-0">
+            <Table striped bordered hover responsive size="sm">
               <thead>
                 <tr>
                   <th>Size</th>
@@ -153,7 +147,7 @@ const ComplianceButtonsPage = () => {
                   </td>
                 </tr>
               </tbody>
-            </table>
+            </Table>
           </Col>
         </Row>
       </Container>
