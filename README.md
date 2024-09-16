@@ -11,6 +11,7 @@ The official website for [Lottie Animation Community][lac]
 ### Features:
 
 > This boilerplate [gatsby-starter-blog](https://www.gatsbyjs.com/starters/gatsbyjs/gatsby-starter-blog/) has been used as the base
+
 - Basic setup for a full-featured blog for news page
 - Support for an RSS feed
 - Automatic optimization of images in Markdown posts
@@ -81,5 +82,4 @@ Any contributions are welcome.
 [MIT](license) @ Lottie Animation Community
 
 [lac]: https://github.com/lottie
-
 [lottie-spec]: https://github.com/lottie/lottie-spec
