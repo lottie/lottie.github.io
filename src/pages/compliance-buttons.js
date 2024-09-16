@@ -128,22 +128,22 @@ const ComplianceButtonsPage = () => {
                       href="/compliance-buttons/lottie-1.0-light.svg"
                       target="_blank"
                       className="stretched-link"
-                    ></a>
+                    >
                     <iframe
                       src="/compliance-buttons/lottie-1.0-light.svg"
                       title="lottie-1.0-light.svg"
-                    ></iframe>
+                    ></iframe></a>
                   </td>
                   <td className="position-relative">
                     <a
                       href="/compliance-buttons/lottie-1.0-dark.svg"
                       target="_blank"
                       className="stretched-link"
-                    ></a>
+                    >
                     <iframe
                       src="/compliance-buttons/lottie-1.0-dark.svg"
                       title="lottie-1.0-dark.svg"
-                    ></iframe>
+                    ></iframe></a>
                   </td>
                 </tr>
               </tbody>
