@@ -1,7 +1,5 @@
 import * as React from "react"
 
-import { graphql } from "gatsby"
-
 import Container from "react-bootstrap/Container"
 import Row from "react-bootstrap/Row"
 import Col from "react-bootstrap/Col"
@@ -19,8 +17,10 @@ const ComplianceButtons = ({ data }) => {
         <Container className="py-5">
           <Row>
             <Col className="py-5">
-              <h1 className="mb-3 h2">{frontmatter.title || ""}</h1>
-              <div className="fw-normal">{frontmatter.description || ""}</div>
+              <h1 className="mb-3 h2">Compliance Buttons</h1>
+              <div className="fw-normal">
+                Buttons to represent compliance with the lottie specs
+              </div>
             </Col>
           </Row>
         </Container>
@@ -156,16 +156,3 @@ export const Head = () => (
     description="Buttons to represent compliance with the lottie specs"
   />
 )
-
-export const pageQuery = graphql`
-  query ImplementationsPage($id: String!) {
-    page: markdownRemark(id: { eq: $id }) {
-      html
-      frontmatter {
-        title
-        date(formatString: "MMMM DD, YYYY")
-        description
-      }
-    }
-  }
-`
