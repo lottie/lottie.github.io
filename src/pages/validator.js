@@ -10,6 +10,7 @@ import Table from "react-bootstrap/Table"
 import Button from "react-bootstrap/Button"
 import ButtonGroup from "react-bootstrap/ButtonGroup"
 import FloatingLabel from "react-bootstrap/FloatingLabel"
+import Spinner from "react-bootstrap/Spinner"
 
 import Layout from "../components/layout"
 import Seo from "../components/seo"
@@ -23,6 +24,12 @@ const content = {
 const tabCssClass = "border border-top-0 rounded-bottom p-4 shadow"
 
 const ValidatorPage = () => {
+  const [loading, setLoading] = React.useState(true)
+
+  const handleValidateBtn = () => {
+    setLoading(!loading)
+  }
+
   return (
     <Layout>
       <section className="bg-primary-subtle">
@@ -84,33 +91,42 @@ const ValidatorPage = () => {
               />
             </div>
             <ButtonGroup aria-label="valiate buttons" size="sm">
-              <Button>validate</Button>
+              <Button onClick={handleValidateBtn}>validate</Button>
               <Button variant="outline-primary" disabled>
                 reset
               </Button>
             </ButtonGroup>
           </Col>
           <Col>
-            <Table striped bordered hover className="shadow">
-              <thead>
-                <tr>
-                  <th>Path</th>
-                  <th>Named Path</th>
-                  <th>Severity</th>
-                  <th>Message</th>
-                  <th>Docs</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>1</td>
-                  <td>2</td>
-                  <td>3</td>
-                  <td>4</td>
-                  <td>5</td>
-                </tr>
-              </tbody>
-            </Table>
+            {loading && (
+              <div className="text-center">
+                <Spinner animation="border" role="status" variant="primary">
+                  <span className="visually-hidden">Loading...</span>
+                </Spinner>
+              </div>
+            )}
+            {!loading && (
+              <Table striped bordered hover className="shadow">
+                <thead>
+                  <tr>
+                    <th>Path</th>
+                    <th>Named Path</th>
+                    <th>Severity</th>
+                    <th>Message</th>
+                    <th>Docs</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>1</td>
+                    <td>2</td>
+                    <td>3</td>
+                    <td>4</td>
+                    <td>5</td>
+                  </tr>
+                </tbody>
+              </Table>
+            )}
           </Col>
         </Row>
       </Container>
