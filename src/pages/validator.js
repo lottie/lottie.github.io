@@ -1,6 +1,8 @@
 import * as React from "react"
 import { useState, useRef, useEffect } from "react"
 
+import Ajv from "ajv"
+
 import Container from "react-bootstrap/Container"
 import Row from "react-bootstrap/Row"
 import Col from "react-bootstrap/Col"
@@ -55,6 +57,7 @@ const ValidatorPage = () => {
   const [lottieText, setLottieText] = useState("")
 
   const [lottie, setLottie] = useState("")
+  const [validationResult, setValidationResult] = useState([])
 
   const [warningProperty, setWarningProperty] = useState(false)
   const [warningType, setWarningType] = useState(false)
@@ -75,10 +78,15 @@ const ValidatorPage = () => {
     setLoading(true)
 
     try {
-      const lottieObj = JSON.parse(lottieStr)
-      console.log("validation", typeof lottieObj)
+      const ajv = new Ajv()
+
+      const validate = ajv.compile(lottieSchema)
+      const lottieJSON = JSON.parse(lottieStr)
+      const result = validate(lottieJSON)
+
+      setValidationResult(result)
     } catch (e) {
-      setErrorMessage(`Could not parse Lottie JSON: ${e.message}`)
+      setErrorMessage(`Could not validate Lottie JSON: ${e.message}`)
     }
 
     setLoading(false)
@@ -161,8 +169,6 @@ const ValidatorPage = () => {
   }
 
   const onValidateBtnClick = () => {
-    resetStates()
-
     switch (currentTab) {
       case "url":
         validateLottieUrl(lottieUrl)
@@ -282,9 +288,7 @@ const ValidatorPage = () => {
         )}
         <Row>
           <Col>
-            {!lottie && errorMessage && (
-              <Alert variant="danger">{errorMessage}</Alert>
-            )}
+            {errorMessage && <Alert variant="danger">{errorMessage}</Alert>}
             {loading && (
               <div className="text-center">
                 <Spinner animation="border" role="status" variant="primary">
@@ -292,7 +296,7 @@ const ValidatorPage = () => {
                 </Spinner>
               </div>
             )}
-            {!loading && lottie && (
+            {!loading && validationResult.length > 0 && (
               <Table striped bordered hover className="shadow">
                 <thead>
                   <tr>
