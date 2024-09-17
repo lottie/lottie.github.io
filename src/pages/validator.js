@@ -1,7 +1,7 @@
 import * as React from "react"
-import { useState, useRef, useEffect } from "react"
+import { useState, useRef } from "react"
 
-import Ajv from "ajv"
+import Ajv from "ajv/dist/2020"
 
 import Container from "react-bootstrap/Container"
 import Row from "react-bootstrap/Row"
@@ -19,7 +19,7 @@ import Alert from "react-bootstrap/Alert"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 
-import LottieSchema from "../assets/lottie.schema.json"
+import lottieSchema from "../assets/lottie.schema.json"
 
 const content = {
   title: "Lottie Validator",
@@ -46,7 +46,6 @@ const ValidatorPage = () => {
   // states
 
   const [loading, setLoading] = useState(false)
-  const [lottieSchema, _setLottieSchema] = useState(LottieSchema)
 
   const [currentTab, setCurrentTab] = useState("url")
 
@@ -57,12 +56,16 @@ const ValidatorPage = () => {
   const [lottieText, setLottieText] = useState("")
 
   const [lottie, setLottie] = useState("")
-  const [validationResult, setValidationResult] = useState([])
+  const [validationErrors, setValidationErrors] = useState([])
 
   const [warningProperty, setWarningProperty] = useState(false)
   const [warningType, setWarningType] = useState(false)
 
-  // handlers
+  // validator
+
+  const ajv = new Ajv({
+    keywords: [{ keyword: "$version" }],
+  })
 
   const validateLottieString = lottieStr => {
     if (!lottieStr) {
@@ -76,21 +79,22 @@ const ValidatorPage = () => {
     }
 
     setLoading(true)
+    setLottie(lottieStr)
 
     try {
-      const ajv = new Ajv()
-
       const validate = ajv.compile(lottieSchema)
       const lottieJSON = JSON.parse(lottieStr)
-      const result = validate(lottieJSON)
+      const isValid = validate(lottieJSON)
 
-      setValidationResult(result)
+      if (!isValid) setValidationErrors(validate.errors)
     } catch (e) {
       setErrorMessage(`Could not validate Lottie JSON: ${e.message}`)
     }
 
     setLoading(false)
   }
+
+  // handlers
 
   const validateLottieUrl = url => {
     if (!url) {
@@ -107,7 +111,7 @@ const ValidatorPage = () => {
 
     fetch(url)
       .then(result => result.text())
-      .then(setLottie)
+      .then(validateLottieString)
       .catch(e =>
         setErrorMessage(`Could not load Lottie file from URL: ${e.message}`)
       )
@@ -123,7 +127,7 @@ const ValidatorPage = () => {
     setLoading(true)
 
     const reader = new FileReader()
-    reader.onload = e => setLottie(e.target.result)
+    reader.onload = e => validateLottieString(e.target.result)
     reader.onerror = _e => setErrorMessage("Could not load file")
     reader.readAsText(file)
 
@@ -141,7 +145,7 @@ const ValidatorPage = () => {
       return
     }
 
-    setLottie(text)
+    validateLottieString(text)
   }
 
   // ui handlers
@@ -150,17 +154,9 @@ const ValidatorPage = () => {
   const onWarningTypeChange = checked => setWarningType(checked)
   const onWarningPropertyChange = checked => setWarningProperty(checked)
 
-  const onLottieFileChange = e => {
-    if (e.target.files.length === 0) {
-      setErrorMessage("Please select a valid Lottie file")
-      return
-    }
-
-    setLottieFile(e.target.files[0])
-  }
-
   const resetStates = () => {
     setLottie("")
+    setValidationErrors("")
     setLottieUrl("")
     setLottieFile(null)
     setLottieText("")
@@ -183,18 +179,6 @@ const ValidatorPage = () => {
         break
     }
   }
-
-  const onResetBtnClick = () => {
-    resetStates()
-  }
-
-  // effects
-
-  useEffect(() => {
-    if (lottie) {
-      validateLottieString(lottie)
-    }
-  }, [lottie])
 
   return (
     <Layout>
@@ -232,7 +216,7 @@ const ValidatorPage = () => {
                       type="file"
                       accept="application/JSON"
                       ref={lottieFileInputRef}
-                      onChange={onLottieFileChange}
+                      onChange={e => setLottieFile(e.target.files[0])}
                     />
                   </Form.Group>
                 </Tab>
@@ -277,8 +261,8 @@ const ValidatorPage = () => {
                 <Button onClick={onValidateBtnClick}>validate</Button>
                 <Button
                   variant="outline-primary"
-                  onClick={onResetBtnClick}
-                  disabled={!lottie && !errorMessage}
+                  onClick={resetStates}
+                  disabled={!validationErrors && !errorMessage}
                 >
                   reset
                 </Button>
@@ -288,7 +272,6 @@ const ValidatorPage = () => {
         )}
         <Row>
           <Col>
-            {errorMessage && <Alert variant="danger">{errorMessage}</Alert>}
             {loading && (
               <div className="text-center">
                 <Spinner animation="border" role="status" variant="primary">
@@ -296,7 +279,13 @@ const ValidatorPage = () => {
                 </Spinner>
               </div>
             )}
-            {!loading && validationResult.length > 0 && (
+            {errorMessage && <Alert variant="danger">{errorMessage}</Alert>}
+            {!errorMessage && lottie && validationErrors.length === 0 && (
+              <Alert variant="primary">
+                Validation successful with no errors
+              </Alert>
+            )}
+            {!loading && validationErrors.length > 0 && (
               <Table striped bordered hover className="shadow">
                 <thead>
                   <tr>
@@ -308,11 +297,11 @@ const ValidatorPage = () => {
                   </tr>
                 </thead>
                 <tbody>
-                  {validationResult.map((result, index) => (
+                  {validationErrors.map((result, index) => (
                     <tr key={`tr-result-${index}`}>
-                      <td>{result.dataPath}</td>
-                      <td>{result.params.missingProperty}</td>
-                      <td>{result.keyword}</td>
+                      <td>{result.instancePath}</td>
+                      <td>{`${Object.keys(result.params)}`}</td>
+                      <td></td>
                       <td>{result.message}</td>
                       <td>{result.schemaPath}</td>
                     </tr>
