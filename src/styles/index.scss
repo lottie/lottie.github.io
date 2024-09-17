@@ -3,3 +3,9 @@
 .page-thumbnail-image {
   margin-top: -6.625rem;
 }
+
+#compliance-buttons-content {
+  .gatsby-resp-image-wrapper {
+    margin: unset !important;
+  }
+}
