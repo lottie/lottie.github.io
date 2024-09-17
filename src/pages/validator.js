@@ -308,13 +308,15 @@ const ValidatorPage = () => {
                   </tr>
                 </thead>
                 <tbody>
-                  <tr>
-                    <td>1</td>
-                    <td>2</td>
-                    <td>3</td>
-                    <td>4</td>
-                    <td>5</td>
-                  </tr>
+                  {validationResult.map((result, index) => (
+                    <tr key={`tr-result-${index}`}>
+                      <td>{result.dataPath}</td>
+                      <td>{result.params.missingProperty}</td>
+                      <td>{result.keyword}</td>
+                      <td>{result.message}</td>
+                      <td>{result.schemaPath}</td>
+                    </tr>
+                  ))}
                 </tbody>
               </Table>
             )}
