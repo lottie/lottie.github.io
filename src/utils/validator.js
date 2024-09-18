@@ -18,7 +18,7 @@ function extract_schema_ty(schema) {
 }
 
 function patch_docs_links(schema, url, name, docs_name, within_properties) {
-  if (typeof schema == "object") {
+  if (typeof schema === "object") {
     if (Array.isArray(schema)) {
       for (let item of schema) patch_docs_links(item, url, name, docs_name)
     } else {
@@ -26,7 +26,7 @@ function patch_docs_links(schema, url, name, docs_name, within_properties) {
         var sub_name = name
         if (within_properties) sub_name += "." + pname
 
-        patch_docs_links(val, url, sub_name, docs_name, pname == "properties")
+        patch_docs_links(val, url, sub_name, docs_name, pname === "properties")
       }
 
       if (!within_properties) {
@@ -86,7 +86,7 @@ class PropertyMap {
   }
 
   extract_all_properties(schema, id, prop_list, referencing_base) {
-    if (typeof schema != "object" || schema === null) return
+    if (typeof schema !== "object" || schema === null) return
 
     if (Array.isArray(schema)) {
       for (let i = 0; i < schema.length; i++)
@@ -96,7 +96,7 @@ class PropertyMap {
     }
 
     for (let [name, sub_schema] of Object.entries(schema)) {
-      if (name == "properties") {
+      if (name === "properties") {
         for (let [prop_name, prop] of Object.entries(sub_schema)) {
           prop_list.properties.add(prop_name)
           let prop_id = id + "/properties/" + prop_name
@@ -107,7 +107,7 @@ class PropertyMap {
             false
           )
         }
-      } else if (name == "oneOf") {
+      } else if (name === "oneOf") {
         for (let i = 0; i < sub_schema.length; i++) {
           let oneof_id = id + "/oneOf/" + i
           let oneof_schema = sub_schema[i]
@@ -116,18 +116,18 @@ class PropertyMap {
             : this.create(oneof_id, oneof_schema)
           this.extract_all_properties(oneof_schema, oneof_id, oneof_list, false)
         }
-      } else if (name == "allOf") {
+      } else if (name === "allOf") {
         for (let i = 0; i < sub_schema.length; i++) {
           let oneof_id = id + "/allOf/" + i
           let oneof_schema = sub_schema[i]
           this.extract_all_properties(oneof_schema, oneof_id, prop_list, true)
         }
-      } else if (name == "additionalProperties") {
+      } else if (name === "additionalProperties") {
         prop_list.skip = true
-      } else if (name == "$ref") {
+      } else if (name === "$ref") {
         prop_list.references.add(sub_schema)
         if (referencing_base) this.all_references.add(sub_schema)
-      } else if (name != "not") {
+      } else if (name !== "not") {
         this.extract_all_properties(
           sub_schema,
           id + "/" + name,
@@ -195,7 +195,7 @@ function patch_schema_enum(schema) {
 }
 
 function keyframe_has_t(kf) {
-  return typeof kf == "object" && typeof kf.t == "number"
+  return typeof kf === "object" && typeof kf.t === "number"
 }
 
 export class Validator {
@@ -210,7 +210,7 @@ export class Validator {
       for (let [obj, sub_schema] of Object.entries(sub_schemas)) {
         let obj_docs = cat_docs
         let obj_name = cat_name
-        if (sub_schema.type && obj != "base-gradient") {
+        if (sub_schema.type && obj !== "base-gradient") {
           obj_docs += "#" + obj
           obj_name = sub_schema.title || kebab_to_title(obj)
         }
@@ -277,7 +277,7 @@ export class Validator {
           ) {
             validate_asset.errors = []
 
-            if (typeof data != "object" || data === null) return true
+            if (typeof data !== "object" || data === null) return true
 
             var target_schema
 
@@ -312,7 +312,7 @@ export class Validator {
             if (data.h) require_io = false
 
             var index = data_cxt.parentData.indexOf(data)
-            if (index == data_cxt.parentData.length - 1) require_io = false
+            if (index === data_cxt.parentData.length - 1) require_io = false
 
             if (require_io) {
               for (var prop of "io") {
@@ -329,7 +329,7 @@ export class Validator {
 
             if (index > 0) {
               var prev_kf = data_cxt.parentData[index - 1]
-              if (keyframe_has_t(prev_kf) && typeof data.t == "number") {
+              if (keyframe_has_t(prev_kf) && typeof data.t === "number") {
                 if (data.t < prev_kf.t) {
                   validate_keyframe.errors.push({
                     message: `keyframe 't' must be in ascending order`,
@@ -337,9 +337,9 @@ export class Validator {
                     instancePath: data_cxt.instancePath,
                     parentSchema: parent_schema,
                   })
-                } else if (data.t == prev_kf.t && index > 1) {
+                } else if (data.t === prev_kf.t && index > 1) {
                   var prev_prev = data_cxt.parentData[index - 2]
-                  if (keyframe_has_t(prev_prev) && data.t == prev_prev.t) {
+                  if (keyframe_has_t(prev_prev) && data.t === prev_prev.t) {
                     validate_keyframe.errors.push({
                       message: `there can be at most 2 keyframes with the same 't' value`,
                       type: "error",
@@ -351,7 +351,7 @@ export class Validator {
               }
             }
 
-            return validate_keyframe.errors.length == 0
+            return validate_keyframe.errors.length === 0
           },
         },
         {
@@ -412,7 +412,7 @@ export class Validator {
           ) {
             warn_extra_props.errors = []
 
-            if (typeof data != "object" || data === null) return true
+            if (typeof data !== "object" || data === null) return true
 
             for (let prop of Object.keys(data)) {
               if (!schema.has(prop)) {
@@ -426,7 +426,7 @@ export class Validator {
               }
             }
 
-            return warn_extra_props.errors.length == 0
+            return warn_extra_props.errors.length === 0
           },
         },
       ],
