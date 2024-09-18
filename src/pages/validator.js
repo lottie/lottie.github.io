@@ -1,8 +1,6 @@
 import * as React from "react"
 import { useState, useRef } from "react"
 
-import Ajv from "ajv/dist/2020"
-
 import Container from "react-bootstrap/Container"
 import Row from "react-bootstrap/Row"
 import Col from "react-bootstrap/Col"
@@ -19,8 +17,8 @@ import Alert from "react-bootstrap/Alert"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 
-import lottieSchema from "../assets/lottie.schema.json"
 import { isValidUrl } from "../utils/helpers"
+import { validate } from "../utils/validator"
 
 const content = {
   title: "Lottie Validator",
@@ -53,55 +51,36 @@ const ValidatorPage = () => {
   const [warningProperty, setWarningProperty] = useState(false)
   const [warningType, setWarningType] = useState(false)
 
-  // validator
-
-  const ajv = new Ajv({
-    keywords: [{ keyword: "$version" }],
-  })
+  // handlers
 
   const validateLottieString = lottieStr => {
-    if (!lottieStr) {
-      setErrorMessage("Lottie cannot be empty")
-      return
-    }
-
-    if (typeof lottieStr !== "string") {
-      setErrorMessage("Lottie must be a string")
-      return
-    }
-
     setLoading(true)
     setLottie(lottieStr)
 
     try {
-      const validate = ajv.compile(lottieSchema)
-      const lottieJSON = JSON.parse(lottieStr)
-      const isValid = validate(lottieJSON)
-
-      if (!isValid) setValidationErrors(validate.errors)
+      const result = validate(lottieStr)
+      setValidationErrors(result)
     } catch (e) {
-      setErrorMessage(`Could not validate Lottie JSON: ${e.message}`)
+      setErrorMessage(e.message)
     }
 
     setLoading(false)
   }
 
-  // handlers
-
-  const validateLottieUrl = url => {
-    if (!url) {
+  const validateLottieUrl = () => {
+    if (!lottieUrl) {
       setErrorMessage("Lottie URL cannot be empty")
       return
     }
 
-    if (!isValidUrl(url)) {
+    if (!isValidUrl(lottieUrl)) {
       setErrorMessage("Invalid Lottie URL")
       return
     }
 
     setLoading(true)
 
-    fetch(url)
+    fetch(lottieUrl)
       .then(result => result.text())
       .then(validateLottieString)
       .catch(e =>
@@ -110,8 +89,8 @@ const ValidatorPage = () => {
       .finally(() => setLoading(false))
   }
 
-  const validateLottieFile = file => {
-    if (!file) {
+  const validateLottieFile = () => {
+    if (!lottieFile) {
       setErrorMessage("Lottie File cannot be empty")
       return
     }
@@ -121,23 +100,23 @@ const ValidatorPage = () => {
     const reader = new FileReader()
     reader.onload = e => validateLottieString(e.target.result)
     reader.onerror = _e => setErrorMessage("Could not load file")
-    reader.readAsText(file)
+    reader.readAsText(lottieFile)
 
     setLoading(false)
   }
 
-  const validateLottieText = text => {
-    if (!text) {
+  const validateLottieText = () => {
+    if (!lottieText) {
       setErrorMessage("Lottie text cannot be empty")
       return
     }
 
-    if (typeof text !== "string") {
+    if (typeof lottieText !== "string") {
       setErrorMessage("Lottie text must be a string")
       return
     }
 
-    validateLottieString(text)
+    validateLottieString(lottieText)
   }
 
   // ui handlers
@@ -159,13 +138,13 @@ const ValidatorPage = () => {
   const onValidateBtnClick = () => {
     switch (currentTab) {
       case "url":
-        validateLottieUrl(lottieUrl)
+        validateLottieUrl()
         break
       case "file":
-        validateLottieFile(lottieFile)
+        validateLottieFile()
         break
       case "text":
-        validateLottieText(lottieText)
+        validateLottieText()
         break
       default:
         break
@@ -185,83 +164,79 @@ const ValidatorPage = () => {
         </Container>
       </section>
       <Container className="py-5 mb-5 position-relative">
-        {lottieSchema && (
-          <Row>
-            <Col md={8} className="mb-3">
-              <Tabs
-                defaultActiveKey={currentTab}
-                id="justify-tab-example"
-                justify
-                onSelect={onTabsSelect}
-              >
-                <Tab eventKey="url" title="URL" className={tabCssClass}>
+        <Row>
+          <Col md={8} className="mb-3">
+            <Tabs
+              defaultActiveKey={currentTab}
+              id="justify-tab-example"
+              justify
+              onSelect={onTabsSelect}
+            >
+              <Tab eventKey="url" title="URL" className={tabCssClass}>
+                <Form.Control
+                  aria-label="Example text with button addon"
+                  aria-describedby="basic-addon1"
+                  placeholder="Paste Lottie JSON URL"
+                  onChange={e => setLottieUrl(e.target.value)}
+                />
+              </Tab>
+              <Tab eventKey="file" title="File" className={tabCssClass}>
+                <Form.Group controlId="formFileLg">
                   <Form.Control
-                    aria-label="Example text with button addon"
-                    aria-describedby="basic-addon1"
-                    placeholder="Paste Lottie JSON URL"
-                    onChange={e => setLottieUrl(e.target.value)}
+                    type="file"
+                    accept="application/JSON"
+                    ref={lottieFileInputRef}
+                    onChange={e => setLottieFile(e.target.files[0])}
                   />
-                </Tab>
-                <Tab eventKey="file" title="File" className={tabCssClass}>
-                  <Form.Group controlId="formFileLg">
-                    <Form.Control
-                      type="file"
-                      accept="application/JSON"
-                      ref={lottieFileInputRef}
-                      onChange={e => setLottieFile(e.target.files[0])}
-                    />
-                  </Form.Group>
-                </Tab>
-                <Tab eventKey="text" title="Text" className={tabCssClass}>
-                  <FloatingLabel
-                    controlId="floatingTextarea"
-                    label="Lottie JSON text"
-                  >
-                    <Form.Control
-                      as="textarea"
-                      placeholder="Paste Lottie JSON text"
-                      style={{ height: "100px" }}
-                      onChange={e => setLottieText(e.target.value)}
-                    />
-                  </FloatingLabel>
-                </Tab>
-              </Tabs>
-            </Col>
-            <Col md={4} className="mb-3">
-              <h6 className="pt-2">Options</h6>
-              <div className="mb-2">
-                <Form.Check
-                  inline
-                  label="Warn about unknown object types"
-                  name="check-warning-type"
-                  type="checkbox"
-                  id="check-warning-type"
-                  onChange={e => onWarningTypeChange(e.currentTarget.checked)}
-                />
-                <Form.Check
-                  inline
-                  label="Warn about unknown properties"
-                  name="check-warning-property"
-                  type="checkbox"
-                  id="check-warning-property"
-                  onChange={e =>
-                    onWarningPropertyChange(e.currentTarget.checked)
-                  }
-                />
-              </div>
-              <ButtonGroup aria-label="valiate buttons" size="sm">
-                <Button onClick={onValidateBtnClick}>validate</Button>
-                <Button
-                  variant="outline-primary"
-                  onClick={resetStates}
-                  disabled={!validationErrors && !errorMessage}
+                </Form.Group>
+              </Tab>
+              <Tab eventKey="text" title="Text" className={tabCssClass}>
+                <FloatingLabel
+                  controlId="floatingTextarea"
+                  label="Lottie JSON text"
                 >
-                  reset
-                </Button>
-              </ButtonGroup>
-            </Col>
-          </Row>
-        )}
+                  <Form.Control
+                    as="textarea"
+                    placeholder="Paste Lottie JSON text"
+                    style={{ height: "100px" }}
+                    onChange={e => setLottieText(e.target.value)}
+                  />
+                </FloatingLabel>
+              </Tab>
+            </Tabs>
+          </Col>
+          <Col md={4} className="mb-3">
+            <h6 className="pt-2">Options</h6>
+            <div className="mb-2">
+              <Form.Check
+                inline
+                label="Warn about unknown object types"
+                name="check-warning-type"
+                type="checkbox"
+                id="check-warning-type"
+                onChange={e => onWarningTypeChange(e.currentTarget.checked)}
+              />
+              <Form.Check
+                inline
+                label="Warn about unknown properties"
+                name="check-warning-property"
+                type="checkbox"
+                id="check-warning-property"
+                onChange={e => onWarningPropertyChange(e.currentTarget.checked)}
+              />
+            </div>
+            <ButtonGroup aria-label="valiate buttons" size="sm">
+              <Button onClick={onValidateBtnClick}>validate</Button>
+              <Button
+                variant="outline-primary"
+                onClick={resetStates}
+                disabled={!validationErrors && !errorMessage}
+              >
+                reset
+              </Button>
+            </ButtonGroup>
+          </Col>
+        </Row>
         <Row>
           <Col>
             {loading && (
