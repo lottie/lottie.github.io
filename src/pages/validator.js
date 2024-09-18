@@ -35,6 +35,7 @@ const ValidatorPage = () => {
   // refs
 
   const lottieFileInputRef = useRef(null)
+  const lottieTextInputRef = useRef(null)
 
   // states
 
@@ -123,6 +124,7 @@ const ValidatorPage = () => {
     setLottieText("")
     setErrorMessage("")
     if (lottieFileInputRef.current) lottieFileInputRef.current.value = ""
+    if (lottieTextInputRef.current) lottieTextInputRef.current.value = ""
   }
 
   const onValidateBtnClick = () => {
@@ -274,6 +276,7 @@ const ValidatorPage = () => {
                     as="textarea"
                     placeholder="Paste Lottie JSON text"
                     style={{ height: "100px" }}
+                    ref={lottieTextInputRef}
                     onChange={e => setLottieText(e.target.value)}
                   />
                 </FloatingLabel>
