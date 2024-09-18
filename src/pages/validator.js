@@ -20,6 +20,7 @@ import Layout from "../components/layout"
 import Seo from "../components/seo"
 
 import lottieSchema from "../assets/lottie.schema.json"
+import { isValidUrl } from "../utils/helpers"
 
 const content = {
   title: "Lottie Validator",
@@ -28,15 +29,6 @@ const content = {
 }
 
 const tabCssClass = "border border-top-0 rounded-bottom p-4 shadow"
-
-const isValidUrl = str => {
-  try {
-    new URL(str)
-    return true
-  } catch (_) {
-    return false
-  }
-}
 
 const ValidatorPage = () => {
   // refs
