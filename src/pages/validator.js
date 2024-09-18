@@ -331,7 +331,7 @@ const ValidatorPage = () => {
               <Alert variant="danger">{errorMessage}</Alert>
             )}
             {!loading && validationResult.length > 0 && (
-              <Table striped bordered hover className="shadow">
+              <Table striped bordered hover responsive className="shadow">
                 <thead>
                   <tr>
                     <th>Path</th>
