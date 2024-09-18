@@ -38,6 +38,8 @@ const ValidatorPage = () => {
 
   // states
 
+  const [validator, setValidator] = useState(null)
+
   const [loading, setLoading] = useState(false)
 
   const [currentTab, setCurrentTab] = useState("url")
@@ -49,10 +51,9 @@ const ValidatorPage = () => {
   const [lottieText, setLottieText] = useState("")
 
   const [lottie, setLottie] = useState("")
-  const [validationErrors, setValidationErrors] = useState([])
-
-  const [warningProperty, setWarningProperty] = useState(false)
-  const [warningType, setWarningType] = useState(false)
+  const [validationResult, setValidationResult] = useState([])
+  const [warnUnknownProps, setWarnUnknownProps] = useState(false)
+  const [warnUnknownObjTypes, setWarnUnknownObjTypes] = useState(true)
 
   // handlers
 
@@ -111,12 +112,12 @@ const ValidatorPage = () => {
   // ui handlers
 
   const onTabsSelect = key => setCurrentTab(key)
-  const onWarningTypeChange = checked => setWarningType(checked)
-  const onWarningPropertyChange = checked => setWarningProperty(checked)
+  const onWarnUnknownObjTypesChange = checked => setWarnUnknownObjTypes(checked)
+  const onWarnUnknownPropsChange = checked => setWarnUnknownProps(checked)
 
   const resetStates = () => {
     setLottie("")
-    setValidationErrors("")
+    setValidationResult([])
     setLottieUrl("")
     setLottieFile(null)
     setLottieText("")
@@ -125,6 +126,8 @@ const ValidatorPage = () => {
   }
 
   const onValidateBtnClick = () => {
+    setErrorMessage("")
+
     switch (currentTab) {
       case "url":
         validateLottieUrl()
@@ -140,27 +143,9 @@ const ValidatorPage = () => {
     }
   }
 
-  useEffect(() => {
-    if (!lottie) return
-
-    setLoading(true)
-
-    const validator = new Validator(Ajv.Ajv2020, lottieSchema)
-
-    try {
-      const errors = validator.validate(lottie)
-      console.log(errors)
-      setValidationErrors(errors)
-    } catch (e) {
-      setErrorMessage(e.message)
-    }
-
-    setLoading(false)
-  }, [lottie])
-
   // render
 
-  const renderTableRows = (errors, warningType, warningProperty) => {
+  const renderTableRows = errors => {
     return errors.map((err, index) => {
       const { path, path_names, type, message, name, docs } = err
 
@@ -173,7 +158,7 @@ const ValidatorPage = () => {
           ? "table-warning"
           : type === "error"
           ? "table-danger"
-          : ""
+          : "table-primary"
 
       const namedPath = path_names
         ? path_names.map(n => n ?? "(unnamed)").join(" > ")
@@ -196,6 +181,50 @@ const ValidatorPage = () => {
       )
     })
   }
+
+  // effects
+
+  useEffect(() => {
+    setLoading(true)
+    setValidator(new Validator(Ajv.Ajv2020, lottieSchema))
+    setLoading(false)
+  }, [])
+
+  useEffect(() => {
+    if (!lottie || !validator) return
+
+    setLoading(true)
+
+    try {
+      const result = validator.validate(lottie)
+      const finalResult = []
+
+      let hasError = false
+
+      console.log(result)
+
+      result.forEach(item => {
+        if (!warnUnknownProps && item.warning === "property") return
+        if (!warnUnknownObjTypes && item.warning === "type") return
+        if (!hasError && item.type === "error") hasError = true
+
+        finalResult.push(item)
+      })
+
+      if (!hasError) {
+        finalResult.unshift({
+          type: "success",
+          message: "Lottie JSON is valid",
+        })
+      }
+
+      setValidationResult(finalResult)
+    } catch (e) {
+      setErrorMessage(e.message)
+    }
+
+    setLoading(false)
+  }, [validator, lottie, warnUnknownProps, warnUnknownObjTypes])
 
   return (
     <Layout>
@@ -260,7 +289,10 @@ const ValidatorPage = () => {
                 name="check-warning-type"
                 type="checkbox"
                 id="check-warning-type"
-                onChange={e => onWarningTypeChange(e.currentTarget.checked)}
+                checked={warnUnknownObjTypes}
+                onChange={e =>
+                  onWarnUnknownObjTypesChange(e.currentTarget.checked)
+                }
               />
               <Form.Check
                 inline
@@ -268,7 +300,10 @@ const ValidatorPage = () => {
                 name="check-warning-property"
                 type="checkbox"
                 id="check-warning-property"
-                onChange={e => onWarningPropertyChange(e.currentTarget.checked)}
+                checked={warnUnknownProps}
+                onChange={e =>
+                  onWarnUnknownPropsChange(e.currentTarget.checked)
+                }
               />
             </div>
             <ButtonGroup aria-label="valiate buttons" size="sm">
@@ -276,7 +311,7 @@ const ValidatorPage = () => {
               <Button
                 variant="outline-primary"
                 onClick={resetStates}
-                disabled={!validationErrors && !errorMessage}
+                disabled={!validationResult && !errorMessage}
               >
                 reset
               </Button>
@@ -295,15 +330,7 @@ const ValidatorPage = () => {
             {!loading && errorMessage && (
               <Alert variant="danger">{errorMessage}</Alert>
             )}
-            {!loading &&
-              !errorMessage &&
-              lottie &&
-              validationErrors.length === 0 && (
-                <Alert variant="primary">
-                  Validation successful with no errors
-                </Alert>
-              )}
-            {!loading && validationErrors.length > 0 && (
+            {!loading && validationResult.length > 0 && (
               <Table striped bordered hover className="shadow">
                 <thead>
                   <tr>
@@ -314,13 +341,7 @@ const ValidatorPage = () => {
                     <th>Docs</th>
                   </tr>
                 </thead>
-                <tbody>
-                  {renderTableRows(
-                    validationErrors,
-                    warningType,
-                    warningProperty
-                  )}
-                </tbody>
+                <tbody>{renderTableRows(validationResult)}</tbody>
               </Table>
             )}
           </Col>
