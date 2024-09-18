@@ -1,5 +1,8 @@
 import * as React from "react"
-import { useState, useRef } from "react"
+import { useState, useRef, useEffect } from "react"
+
+import Ajv from "ajv/dist/2020"
+import lottieSchema from "../assets/lottie.schema.json"
 
 import Container from "react-bootstrap/Container"
 import Row from "react-bootstrap/Row"
@@ -18,7 +21,7 @@ import Layout from "../components/layout"
 import Seo from "../components/seo"
 
 import { isValidUrl } from "../utils/helpers"
-import { validate } from "../utils/validator"
+import { Validator } from "../utils/validator"
 
 const content = {
   title: "Lottie Validator",
@@ -53,20 +56,6 @@ const ValidatorPage = () => {
 
   // handlers
 
-  const validateLottieString = lottieStr => {
-    setLoading(true)
-    setLottie(lottieStr)
-
-    try {
-      const result = validate(lottieStr)
-      setValidationErrors(result)
-    } catch (e) {
-      setErrorMessage(e.message)
-    }
-
-    setLoading(false)
-  }
-
   const validateLottieUrl = () => {
     if (!lottieUrl) {
       setErrorMessage("Lottie URL cannot be empty")
@@ -82,7 +71,7 @@ const ValidatorPage = () => {
 
     fetch(lottieUrl)
       .then(result => result.text())
-      .then(validateLottieString)
+      .then(setLottie)
       .catch(e =>
         setErrorMessage(`Could not load Lottie file from URL: ${e.message}`)
       )
@@ -98,7 +87,7 @@ const ValidatorPage = () => {
     setLoading(true)
 
     const reader = new FileReader()
-    reader.onload = e => validateLottieString(e.target.result)
+    reader.onload = e => setLottie(e.target.result)
     reader.onerror = _e => setErrorMessage("Could not load file")
     reader.readAsText(lottieFile)
 
@@ -116,7 +105,7 @@ const ValidatorPage = () => {
       return
     }
 
-    validateLottieString(lottieText)
+    setLottie(lottieText)
   }
 
   // ui handlers
@@ -149,6 +138,63 @@ const ValidatorPage = () => {
       default:
         break
     }
+  }
+
+  useEffect(() => {
+    if (!lottie) return
+
+    setLoading(true)
+
+    const validator = new Validator(Ajv.Ajv2020, lottieSchema)
+
+    try {
+      const errors = validator.validate(lottie)
+      console.log(errors)
+      setValidationErrors(errors)
+    } catch (e) {
+      setErrorMessage(e.message)
+    }
+
+    setLoading(false)
+  }, [lottie])
+
+  // render
+
+  const renderTableRows = (errors, warningType, warningProperty) => {
+    return errors.map((err, index) => {
+      const { path, path_names, type, message, name, docs } = err
+
+      const docsUrl = docs
+        ? `https://lottie.github.io/lottie-spec/latest/${docs}`
+        : ""
+
+      const trClass =
+        type === "warning"
+          ? "table-warning"
+          : type === "error"
+          ? "table-danger"
+          : ""
+
+      const namedPath = path_names
+        ? path_names.map(n => n ?? "(unnamed)").join(" > ")
+        : ""
+
+      return (
+        <tr key={`tr-err-${index}`} className={trClass}>
+          <td>{path || ""}</td>
+          <td>{namedPath || ""}</td>
+          <td>{type || ""}</td>
+          <td>{message || ""}</td>
+          <td>
+            {docs && (
+              <a href={docsUrl} target="_blank" rel="noreferrer">
+                {name}
+              </a>
+            )}
+          </td>
+        </tr>
+      )
+    })
   }
 
   return (
@@ -246,12 +292,17 @@ const ValidatorPage = () => {
                 </Spinner>
               </div>
             )}
-            {errorMessage && <Alert variant="danger">{errorMessage}</Alert>}
-            {!errorMessage && lottie && validationErrors.length === 0 && (
-              <Alert variant="primary">
-                Validation successful with no errors
-              </Alert>
+            {!loading && errorMessage && (
+              <Alert variant="danger">{errorMessage}</Alert>
             )}
+            {!loading &&
+              !errorMessage &&
+              lottie &&
+              validationErrors.length === 0 && (
+                <Alert variant="primary">
+                  Validation successful with no errors
+                </Alert>
+              )}
             {!loading && validationErrors.length > 0 && (
               <Table striped bordered hover className="shadow">
                 <thead>
@@ -264,15 +315,11 @@ const ValidatorPage = () => {
                   </tr>
                 </thead>
                 <tbody>
-                  {validationErrors.map((result, index) => (
-                    <tr key={`tr-result-${index}`}>
-                      <td>{result.instancePath}</td>
-                      <td>{`${Object.keys(result.params)}`}</td>
-                      <td></td>
-                      <td>{result.message}</td>
-                      <td>{result.schemaPath}</td>
-                    </tr>
-                  ))}
+                  {renderTableRows(
+                    validationErrors,
+                    warningType,
+                    warningProperty
+                  )}
                 </tbody>
               </Table>
             )}
