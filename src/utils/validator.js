@@ -475,7 +475,7 @@ export class Validator {
     }
 
     schema.prop_oneof = []
-    for (let opt of schema.oneOf) {
+    for (let opt of schema.oneOf || []) {
       schema.prop_oneof.push({
         schema: {
           type: "object",
