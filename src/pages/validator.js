@@ -190,6 +190,10 @@ const ValidatorPage = () => {
     setLoading(true)
     setValidator(new Validator(Ajv.Ajv2020, lottieSchema))
     setLoading(false)
+
+    return () => {
+      setValidator(null)
+    }
   }, [])
 
   useEffect(() => {
@@ -202,8 +206,6 @@ const ValidatorPage = () => {
       const finalResult = []
 
       let hasError = false
-
-      console.log(result)
 
       result.forEach(item => {
         if (!warnUnknownProps && item.warning === "property") return
