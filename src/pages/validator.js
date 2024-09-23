@@ -167,7 +167,7 @@ const ValidatorPage = () => {
         : ""
 
       return (
-        <tr key={`tr-err-${index}`} className={trClass}>
+        <tr key={`tr-msg-${index}`} className={trClass}>
           <td>{path || ""}</td>
           <td>{namedPath || ""}</td>
           <td>{type || ""}</td>
