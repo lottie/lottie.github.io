@@ -28,4 +28,8 @@ export const ROUTES = {
     route: "/compliance-buttons",
     text: "Compliance Buttons",
   },
+  validator: {
+    route: "/validator",
+    text: "Validator",
+  },
 }
