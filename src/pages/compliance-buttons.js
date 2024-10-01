@@ -54,6 +54,7 @@ const ComplianceButtonsPage = () => {
                       target="_blank"
                     >
                       <img
+                        height={28}
                         src="/compliance-buttons/lottie-1.0-light-28.png"
                         alt="lottie-1.0-light-28.png"
                       />
@@ -65,6 +66,7 @@ const ComplianceButtonsPage = () => {
                       target="_blank"
                     >
                       <img
+                        height={28}
                         src="/compliance-buttons/lottie-1.0-dark-28.png"
                         alt="lottie-1.0-dark-28.png"
                       />
@@ -79,6 +81,7 @@ const ComplianceButtonsPage = () => {
                       target="_blank"
                     >
                       <img
+                        height={56}
                         src="/compliance-buttons/lottie-1.0-light-56.png"
                         alt="lottie-1.0-light-56.png"
                       />
@@ -90,6 +93,7 @@ const ComplianceButtonsPage = () => {
                       target="_blank"
                     >
                       <img
+                        height={56}
                         src="/compliance-buttons/lottie-1.0-dark-56.png"
                         alt="lottie-1.0-dark-56.png"
                       />
@@ -104,6 +108,7 @@ const ComplianceButtonsPage = () => {
                       target="_blank"
                     >
                       <img
+                        height={112}
                         src="/compliance-buttons/lottie-1.0-light-112.png"
                         alt="lottie-1.0-light-112.png"
                       />
@@ -115,6 +120,7 @@ const ComplianceButtonsPage = () => {
                       target="_blank"
                     >
                       <img
+                        height={112}
                         src="/compliance-buttons/lottie-1.0-dark-112.png"
                         alt="lottie-1.0-dark-112.png"
                       />
@@ -129,10 +135,12 @@ const ComplianceButtonsPage = () => {
                       target="_blank"
                       className="stretched-link"
                     >
-                    <iframe
-                      src="/compliance-buttons/lottie-1.0-light.svg"
-                      title="lottie-1.0-light.svg"
-                    ></iframe></a>
+                      <img
+                        height={84}
+                        src="/compliance-buttons/lottie-1.0-light.svg"
+                        alt="lottie-1.0-dark-112.png"
+                      />
+                    </a>
                   </td>
                   <td className="position-relative">
                     <a
@@ -140,10 +148,12 @@ const ComplianceButtonsPage = () => {
                       target="_blank"
                       className="stretched-link"
                     >
-                    <iframe
-                      src="/compliance-buttons/lottie-1.0-dark.svg"
-                      title="lottie-1.0-dark.svg"
-                    ></iframe></a>
+                      <img
+                        height={84}
+                        src="/compliance-buttons/lottie-1.0-dark.svg"
+                        alt="lottie-1.0-dark.svg"
+                      />
+                    </a>
                   </td>
                 </tr>
               </tbody>
