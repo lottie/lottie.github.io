@@ -50,38 +50,11 @@ const ComplianceButtonsPage = () => {
                   <th>Small</th>
                   <td>
                     <a
-                      href="/compliance-buttons/lottie-1.0-light-28.png"
-                      target="_blank"
-                    >
-                      <img
-                        height={28}
-                        src="/compliance-buttons/lottie-1.0-light-28.png"
-                        alt="lottie-1.0-light-28.png"
-                      />
-                    </a>
-                  </td>
-                  <td>
-                    <a
-                      href="/compliance-buttons/lottie-1.0-dark-28.png"
-                      target="_blank"
-                    >
-                      <img
-                        height={28}
-                        src="/compliance-buttons/lottie-1.0-dark-28.png"
-                        alt="lottie-1.0-dark-28.png"
-                      />
-                    </a>
-                  </td>
-                </tr>
-                <tr>
-                  <th>Medium</th>
-                  <td>
-                    <a
                       href="/compliance-buttons/lottie-1.0-light-56.png"
                       target="_blank"
                     >
                       <img
-                        height={56}
+                        height={28}
                         src="/compliance-buttons/lottie-1.0-light-56.png"
                         alt="lottie-1.0-light-56.png"
                       />
@@ -93,7 +66,7 @@ const ComplianceButtonsPage = () => {
                       target="_blank"
                     >
                       <img
-                        height={56}
+                        height={28}
                         src="/compliance-buttons/lottie-1.0-dark-56.png"
                         alt="lottie-1.0-dark-56.png"
                       />
@@ -101,14 +74,14 @@ const ComplianceButtonsPage = () => {
                   </td>
                 </tr>
                 <tr>
-                  <th>Large</th>
+                  <th>Medium</th>
                   <td>
                     <a
                       href="/compliance-buttons/lottie-1.0-light-112.png"
                       target="_blank"
                     >
                       <img
-                        height={112}
+                        height={56}
                         src="/compliance-buttons/lottie-1.0-light-112.png"
                         alt="lottie-1.0-light-112.png"
                       />
@@ -120,9 +93,36 @@ const ComplianceButtonsPage = () => {
                       target="_blank"
                     >
                       <img
-                        height={112}
+                        height={56}
                         src="/compliance-buttons/lottie-1.0-dark-112.png"
                         alt="lottie-1.0-dark-112.png"
+                      />
+                    </a>
+                  </td>
+                </tr>
+                <tr>
+                  <th>Large</th>
+                  <td>
+                    <a
+                      href="/compliance-buttons/lottie-1.0-light-224.png"
+                      target="_blank"
+                    >
+                      <img
+                        height={112}
+                        src="/compliance-buttons/lottie-1.0-light-224.png"
+                        alt="lottie-1.0-light-224.png"
+                      />
+                    </a>
+                  </td>
+                  <td>
+                    <a
+                      href="/compliance-buttons/lottie-1.0-dark-224.png"
+                      target="_blank"
+                    >
+                      <img
+                        height={112}
+                        src="/compliance-buttons/lottie-1.0-dark-224.png"
+                        alt="lottie-1.0-dark-224.png"
                       />
                     </a>
                   </td>
