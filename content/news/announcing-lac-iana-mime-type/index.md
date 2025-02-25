@@ -1,8 +1,7 @@
 ---
 title: Lottie Animation Community Achieves Formal Recognition from IANA and IESG
 date: "2025-02-24T12:13:57.284Z"
-description: 
-- 'Announcing formal assignment of ".lot" file extension and the "video/lottie+json" MIME type with the Internet Assigned Numbers Authority (IANA).'
+description: "Announcing formal assignment of .lot file extension and the video/lottie+json MIME type with the Internet Assigned Numbers Authority (IANA)."
 featuredImage: lac-announce-mime-type-and-lot.png
 ---
 
