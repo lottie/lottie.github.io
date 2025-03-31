@@ -21,7 +21,7 @@ import Layout from "../components/layout"
 import Seo from "../components/seo"
 
 import { isValidUrl } from "../utils/helpers"
-import { Validator } from "../utils/validator"
+import { LottieValidator } from "@lottie-animation-community/lottie-specs"
 
 const content = {
   title: "Lottie Validator",
@@ -188,7 +188,7 @@ const ValidatorPage = () => {
 
   useEffect(() => {
     setLoading(true)
-    setValidator(new Validator(Ajv.Ajv2020, lottieSchema))
+    setValidator(new LottieValidator(Ajv.Ajv2020, lottieSchema))
     setLoading(false)
 
     return () => {
