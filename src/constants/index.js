@@ -21,7 +21,7 @@ export const ROUTES = {
     text: "Roadmap",
   },
   contribute: {
-    // route: "contribute",
+    route: "/contribute",
     text: "Contribute",
   },
   buttons: {

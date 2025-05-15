@@ -91,8 +91,9 @@ const Home = ({ data }) => {
                   size="lg"
                   variant="link"
                   className="mt-4 py-0 fw-semibold text-decoration-none text-primary"
-                  target="_blank"
-                  href={urls?.specRepo || ""}
+                  // target="_blank"
+                  href={ROUTES.contribute.route || ""}
+                  // href={urls?.specRepo || ""}
                 >
                   {ROUTES.contribute.text}
                 </Button>
@@ -151,8 +152,10 @@ const Home = ({ data }) => {
                 as="a"
                 size="lg"
                 className="mt-4"
-                href={urls?.specRepo || ""}
-                target="_blank"
+                href={ROUTES.contribute.route || ""}
+                // target="_blank"
+                // href={urls?.specRepo || ""}
+                // target="_blank"
               >
                 {ROUTES.contribute.text}
               </Button>
