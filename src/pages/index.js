@@ -153,9 +153,6 @@ const Home = ({ data }) => {
                 size="lg"
                 className="mt-4"
                 href={ROUTES.contribute.route || ""}
-                // target="_blank"
-                // href={urls?.specRepo || ""}
-                // target="_blank"
               >
                 {ROUTES.contribute.text}
               </Button>
