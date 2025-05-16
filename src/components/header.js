@@ -90,8 +90,8 @@ export const Header = () => {
               </Nav.Link>
             </Nav.Item>
             <Nav.Item>
-              <Nav.Link as={Link} to={ROUTES.community.route} target="_blank">
-                {ROUTES.community.text}
+              <Nav.Link as={Link} to={ROUTES.contribute.route} target="_blank">
+                {ROUTES.contribute.text}
               </Nav.Link>
             </Nav.Item>
             <Nav.Item>
