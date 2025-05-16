@@ -91,9 +91,7 @@ const Home = ({ data }) => {
                   size="lg"
                   variant="link"
                   className="mt-4 py-0 fw-semibold text-decoration-none text-primary"
-                  // target="_blank"
                   href={ROUTES.contribute.route || ""}
-                  // href={urls?.specRepo || ""}
                 >
                   {ROUTES.contribute.text}
                 </Button>
