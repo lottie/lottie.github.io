@@ -19,13 +19,6 @@ export const Header = () => {
             }
           }
         }
-        allMarkdownRemark(filter: { fields: { contentType: { eq: "news" } } }) {
-          nodes {
-            fields {
-              slug
-            }
-          }
-        }
       }
     `
   )
