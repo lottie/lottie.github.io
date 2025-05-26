@@ -18,7 +18,7 @@ import Seo from "../components/seo"
 const CONTENT = {
   intro: {
     title: "Lottie is an open format for animated vector graphics",
-    body: "​​Lottie is an open-source vector graphics animation file format . It was first created in 2015 by Hernan Torrisi as an export format for the export and playback of animations from Adobe After Effects. It is now a highly popular animation format used on the web, mobile applications and other systems with multiple independent renderer implementations and creation support.",
+    body: "​​Lottie is an open-source vector graphics animation file format. It was first created in 2015 by Hernan Torrisi as an export format for the export and playback of animations from Adobe After Effects. It is now a highly popular animation format used on the web, mobile applications and other systems with multiple independent renderer implementations and creation support.",
   },
   whyLottie: {
     title: "What is Lottie?",
