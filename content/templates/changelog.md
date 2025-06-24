@@ -5,6 +5,14 @@ description: "Summary of released and upcoming feautres covered by the Lottie sp
 image: null
 ---
 
+### v1.0.1 (April 2025)
+
+- adds definitions for pucker/bloat modifiers
+- clarifies usage of gradient and stroke-dashes
+- improves the definition of gradient properties
+
+<hr>
+
 ### v1.0 (September 2024)
 
 The v1.0 specification contains features that are commonly used by current players and that behave in a consistent way. Not all features are currently covered and missing features may be added in future releases.
@@ -20,17 +28,3 @@ Features in 1.0 release:
 - **Time Remap and Stretch**
 - **Masks and Mattes**
 - **Slots**
-
-### v1.1 (H1 2025)
-
-- Contents TBD
-
-### Future Releases
-
-- Player Profiles
-- Text Layers
-- Layer effects
-- Metadata
-- Blend modes
-- Expressions
-- Additional modifiers
