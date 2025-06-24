@@ -5,6 +5,10 @@ description: "Summary of released features covered by the Lottie specification."
 image: null
 ---
 
+For detailed information on the roadmap and development progress, please visit <a href="https://github.com/orgs/lottie/projects/4/views/1" target="_blank">github/projects/lottie-spec</a>
+
+<hr>
+
 ### v1.0.1 (April 2025)
 
 - adds definitions for pucker/bloat modifiers
