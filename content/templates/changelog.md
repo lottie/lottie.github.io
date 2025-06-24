@@ -1,7 +1,7 @@
 ---
 title: Changelog
 date: "2024-01-4T12:01:05.284Z"
-description: "Summary of released and upcoming feautres covered by the Lottie specification"
+description: "Summary of released features covered by the Lottie specification."
 image: null
 ---
 
