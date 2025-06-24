@@ -68,9 +68,9 @@ export const Header = () => {
               <Nav.Link
                 as={Link}
                 className="text-capitalize"
-                to={ROUTES.roadmap.route}
+                to={ROUTES.changelog.route}
               >
-                {ROUTES.roadmap.text}
+                {ROUTES.changelog.text}
               </Nav.Link>
             </Nav.Item>
             <Nav.Item>

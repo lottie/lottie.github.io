@@ -16,9 +16,9 @@ export const ROUTES = {
     route: "/news",
     text: "News",
   },
-  roadmap: {
-    route: "/roadmap",
-    text: "Roadmap",
+  changelog: {
+    route: "/changelog",
+    text: "Changelog",
   },
   contribute: {
     route: "/contribute",

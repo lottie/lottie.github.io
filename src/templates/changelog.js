@@ -9,7 +9,7 @@ import Col from "react-bootstrap/Col"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 
-const Roadmap = ({ data }) => {
+const Changelog = ({ data }) => {
   const { page } = data
   const { html, frontmatter } = page
 
@@ -40,14 +40,16 @@ const Roadmap = ({ data }) => {
   )
 }
 
-export default Roadmap
+export default Changelog
 
 /**
  * Head export to define metadata for the page
  *
  * See: https://www.gatsbyjs.com/docs/reference/built-in-components/gatsby-head/
  */
-export const Head = () => <Seo title="Roadmap" description="Lottie Roadmap" />
+export const Head = () => (
+  <Seo title="changelog" description="Lottie changelog" />
+)
 
 export const pageQuery = graphql`
   query ImplementationsPage($id: String!) {

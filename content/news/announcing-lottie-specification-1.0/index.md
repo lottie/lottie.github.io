@@ -10,9 +10,9 @@ featuredImage: lottie-1_0-release.png
 The Lottie Animation Community (LAC), a [Joint Development Foundation project](https://jointdevelopment.org/), is pleased to announce the release of the v1.0 Lottie JSON specification.
 This marks a significant milestone in our efforts to establish the [Lottie File Format](https://lottie.github.io/lottie-spec/1.0/) as an open standard for efficient, scalable, and cross-platform animated vector graphics.
 
-The v1.0 specification lays the foundation for future advancements, with a clear roadmap guiding the ongoing development of the format. We invite creators, implementers, and the wider community to explore the specification, contribute to its evolution, and help shape the future of animation technology.
+The v1.0 specification lays the foundation for future advancements, with a clear changelog guiding the ongoing development of the format. We invite creators, implementers, and the wider community to explore the specification, contribute to its evolution, and help shape the future of animation technology.
 
-For more details on the v1.0 specification and what lies ahead, visit https://lottie.github.io/roadmap/.
+For more details on the v1.0 specification and what lies ahead, visit https://lottie.github.io/changelog/.
 
 #### About Lottie v1.0
 

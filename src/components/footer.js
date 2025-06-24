@@ -52,8 +52,8 @@ export const Footer = () => {
             </Nav.Link>
           </Nav.Item>
           <Nav.Item>
-            <Nav.Link as={Link} to={ROUTES.roadmap.route} target="_blank">
-              {ROUTES.roadmap.text}
+            <Nav.Link as={Link} to={ROUTES.changelog.route} target="_blank">
+              {ROUTES.changelog.text}
             </Nav.Link>
           </Nav.Item>
           <Nav.Item>
