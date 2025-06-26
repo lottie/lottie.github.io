@@ -1,9 +1,21 @@
 ---
-title: Roadmap
+title: Changelog
 date: "2024-01-4T12:01:05.284Z"
-description: "Summary of released and upcoming feautres covered by the Lottie specification"
+description: "Summary of released features covered by the Lottie specification."
 image: null
 ---
+
+For detailed information on the roadmap and development progress, please visit <a href="https://github.com/orgs/lottie/projects/4/views/1" target="_blank">github/projects/lottie-spec</a>
+
+<hr>
+
+### v1.0.1 (April 2025)
+
+- adds definitions for pucker/bloat modifiers
+- clarifies usage of gradient and stroke-dashes
+- improves the definition of gradient properties
+
+<hr>
 
 ### v1.0 (September 2024)
 
@@ -20,17 +32,3 @@ Features in 1.0 release:
 - **Time Remap and Stretch**
 - **Masks and Mattes**
 - **Slots**
-
-### v1.1 (H1 2025)
-
-- Contents TBD
-
-### Future Releases
-
-- Player Profiles
-- Text Layers
-- Layer effects
-- Metadata
-- Blend modes
-- Expressions
-- Additional modifiers

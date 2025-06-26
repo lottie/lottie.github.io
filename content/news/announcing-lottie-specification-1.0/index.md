@@ -12,7 +12,7 @@ This marks a significant milestone in our efforts to establish the [Lottie File 
 
 The v1.0 specification lays the foundation for future advancements, with a clear roadmap guiding the ongoing development of the format. We invite creators, implementers, and the wider community to explore the specification, contribute to its evolution, and help shape the future of animation technology.
 
-For more details on the v1.0 specification and what lies ahead, visit https://lottie.github.io/roadmap/.
+For more details on the v1.0 specification and what lies ahead, visit https://lottie.github.io/changelog/.
 
 #### About Lottie v1.0
 
