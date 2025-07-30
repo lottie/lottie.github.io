@@ -13,7 +13,7 @@ The presentation will cover the collaborative effort involved in developing an o
 
 Speakers for this session include:
 
-* **Mattia Basaglia**, Principal R&D Engineer, Lottiefiles.
+* **Mattia Basaglia**, Principal R&D Engineer, LottieFiles.
 * **Brandon Wilson**, Senior Software Engineer, Google.
 
 We look forward to sharing these developments with the open-source community in Amsterdam.
