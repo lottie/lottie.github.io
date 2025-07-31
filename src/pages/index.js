@@ -6,7 +6,7 @@ import Row from "react-bootstrap/Row"
 import Col from "react-bootstrap/Col"
 import Button from "react-bootstrap/Button"
 
-import LottiePlayer from "lottie-react"
+import LottiePlayerSSR from "../components/LottiePlayerSSR"
 
 import lottieLogo from "../assets/lottie-logo.json"
 
@@ -14,7 +14,7 @@ import { ROUTES } from "../constants/index"
 
 import Layout from "../components/layout"
 import Seo from "../components/seo"
-import FAQ from "../components/faq"
+import Faq from "../components/faq"
 
 const CONTENT = {
   intro: {
@@ -133,7 +133,7 @@ const Home = ({ data }) => {
       <Container>
         <Row className="pt-4 pb-5">
           <Col className="text-center">
-            <LottiePlayer
+            <LottiePlayerSSR
               animationData={lottieLogo}
               loop={true}
               style={{ width: "190px", height: "175px" }}
@@ -188,7 +188,7 @@ const Home = ({ data }) => {
           </Row>
         </Container>
       </section>
-      <FAQ title={CONTENT.faq.title} items={CONTENT.faq.items} />
+      <Faq title={CONTENT.faq.title} items={CONTENT.faq.items} />
     </Layout>
   )
 }

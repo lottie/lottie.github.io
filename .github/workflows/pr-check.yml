@@ -1,0 +1,36 @@
+name: PR Build Check
+
+on:
+  pull_request:
+    branches:
+      - main
+
+# Cancel in-progress runs if a new commit is pushed to the PR
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build-check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        
+      - name: Setup
+        run: npm install
+        
+      - name: Run build
+        run: npm run build
+        
+      - name: Check build artifacts
+        run: |
+          if [ ! -d "public" ]; then
+            echo "Build failed: public directory not created"
+            exit 1
+          fi
+          if [ ! -f "public/index.html" ]; then
+            echo "Build failed: index.html not found"
+            exit 1
+          fi
+          echo "Build successful: all artifacts present"
