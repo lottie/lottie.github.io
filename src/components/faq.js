@@ -33,8 +33,10 @@ const FAQItem = ({ question, answer, isOpen, onToggle }) => {
           <div className="mb-0 text-muted">
             <ReactMarkdown
               components={{
-                a: ({ node, ...props }) => (
-                  <a {...props} target="_blank" rel="noopener noreferrer" className="text-primary" />
+                a: ({ node, children, ...props }) => (
+                  <a {...props} target="_blank" rel="noopener noreferrer" className="text-primary">
+                    {children}
+                  </a>
                 ),
                 code: ({ node, ...props }) => (
                   <code {...props} className="bg-light px-1 rounded" />
@@ -53,7 +55,7 @@ const FAQItem = ({ question, answer, isOpen, onToggle }) => {
   )
 }
 
-const FAQ = ({ title, items }) => {
+const Faq = ({ title, items }) => {
   const [openItems, setOpenItems] = useState({})
 
   const toggleItem = (index) => {
@@ -85,4 +87,4 @@ const FAQ = ({ title, items }) => {
   )
 }
 
-export default FAQ
+export default Faq

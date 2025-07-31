@@ -14,7 +14,7 @@ import { ROUTES } from "../constants/index"
 
 import Layout from "../components/layout"
 import Seo from "../components/seo"
-import FAQ from "../components/faq"
+import Faq from "../components/faq"
 
 const CONTENT = {
   intro: {
@@ -188,7 +188,7 @@ const Home = ({ data }) => {
           </Row>
         </Container>
       </section>
-      <FAQ title={CONTENT.faq.title} items={CONTENT.faq.items} />
+      <Faq title={CONTENT.faq.title} items={CONTENT.faq.items} />
     </Layout>
   )
 }
