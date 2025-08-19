@@ -98,7 +98,7 @@ const Home = ({ data }) => {
         </Row>
       </Container>
       
-      <section className="py-5">
+      <section className="py-5" id="demos">
         <Container>
           <Row>
             <Col md={{ span: 8, offset: 2 }}>
