@@ -9,6 +9,7 @@ import Seo from "../components/seo"
 import LottieCard from "../components/LottieCard"
 
 import { sampleAnimations } from "../data/sampleAnimations"
+import { Link } from "gatsby"
 
 const Demos = () => {
   return (
@@ -31,6 +32,7 @@ const Demos = () => {
                 author={animation.author}
                 authorUrl={animation.authorUrl}
                 animationData={animation.animationData}
+                className="shadow border-0"
               />
             </Col>
           ))}
