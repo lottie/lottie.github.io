@@ -25,7 +25,7 @@ const Demos = () => {
         
         <Row className="g-4">
           {sampleAnimations.map((animation) => (
-            <Col lg={4} md={6} key={animation.id}>
+            <Col lg={4} md={6} key={`sample-animation-${animation.id}`}>
               <LottieCard
                 title={animation.title}
                 author={animation.author}
