@@ -110,6 +110,7 @@ const Home = ({ data }) => {
                       author={animation.author}
                       authorUrl={animation.authorUrl}
                       animationData={animation.animationData}
+                      className="shadow border-0"
                     />
                   </Col>
                 ))}
