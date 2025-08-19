@@ -38,12 +38,12 @@ const Demos = () => {
         
         <Row className="mt-5">
           <Col>
-            <a 
-              href="/"
+            <Link 
+              to="/#demos"
               className="text-decoration-none fw-semibold text-primary"
             >
               ← Back to Home
-            </a>
+            </Link>
           </Col>
         </Row>
       </Container>
