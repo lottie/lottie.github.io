@@ -114,12 +114,12 @@ const Home = ({ data }) => {
                   </Col>
                 ))}
                 <Col className="mt-4">
-                  <a 
-                    href="/demos"
+                  <Link 
+                    to="/demos"
                     className="text-decoration-none fw-semibold text-primary"
                   >
                     View More Demos →
-                  </a>
+                  </Link>
                 </Col>
               </Row>
             </Col>
