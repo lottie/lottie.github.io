@@ -104,7 +104,7 @@ const Home = ({ data }) => {
             <Col md={{ span: 8, offset: 2 }}>
               <Row className="g-4">
                 {featuredAnimations.map((animation) => (
-                  <Col md={6} key={animation.id}>
+                  <Col md={6} key={`featured-animation-${animation.id}`}>
                     <LottieCard
                       title={animation.title}
                       author={animation.author}
