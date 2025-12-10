@@ -151,8 +151,9 @@ const ValidatorPage = () => {
     return errors.map((err, index) => {
       const { path, path_names, type, message, name, docs } = err
 
-      const BASE = "https://lottie.github.io/lottie-spec/latest";
-      const docsUrl = docs ? (docs.startsWith("http") ? docs : `${BASE}/${docs}`) : "";
+      const docsUrl = docs
+        ? `https://lottie.github.io/lottie-spec/latest/${docs}`
+        : ""
 
       const trClass =
         type === "warning"
@@ -187,7 +188,9 @@ const ValidatorPage = () => {
 
   useEffect(() => {
     setLoading(true)
-    setValidator(new LottieValidator(Ajv.Ajv2020, lottieSchema))
+    setValidator(
+      new LottieValidator(Ajv.Ajv2020, lottieSchema, { docs_url: "" })
+    )
     setLoading(false)
 
     return () => {
