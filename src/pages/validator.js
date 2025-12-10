@@ -151,9 +151,8 @@ const ValidatorPage = () => {
     return errors.map((err, index) => {
       const { path, path_names, type, message, name, docs } = err
 
-      const docsUrl = docs
-        ? `https://lottie.github.io/lottie-spec/latest/${docs}`
-        : ""
+      const BASE = "https://lottie.github.io/lottie-spec/latest";
+      const docsUrl = docs ? (docs.startsWith("http") ? docs : `${BASE}/${docs}`) : "";
 
       const trClass =
         type === "warning"
