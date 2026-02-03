@@ -10,18 +10,18 @@ import ReactMarkdown from "react-markdown"
 const FAQItem = ({ question, answer, isOpen, onToggle }) => {
   return (
     <Card className="mb-3 border-0 shadow-sm">
-      <Card.Header 
+      <Card.Header
         className="bg-white border-0 py-3"
         style={{ cursor: "pointer" }}
         onClick={onToggle}
       >
         <div className="d-flex justify-content-between align-items-center">
           <h5 className="mb-0 fw-semibold">{question}</h5>
-          <span 
+          <span
             className="fs-4 text-primary"
-            style={{ 
+            style={{
               transform: isOpen ? "rotate(45deg)" : "rotate(0deg)",
-              transition: "transform 0.2s ease"
+              transition: "transform 0.2s ease",
             }}
           >
             +
@@ -34,16 +34,19 @@ const FAQItem = ({ question, answer, isOpen, onToggle }) => {
             <ReactMarkdown
               components={{
                 a: ({ node, children, ...props }) => (
-                  <a {...props} target="_blank" rel="noopener noreferrer" className="text-primary">
+                  <a
+                    {...props}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-primary"
+                  >
                     {children}
                   </a>
                 ),
-                code: ({ node, ...props }) => (
+                code: ({ node, inline, ...props }) => (
                   <code {...props} className="bg-light px-1 rounded" />
                 ),
-                p: ({ node, ...props }) => (
-                  <span {...props} />
-                )
+                p: ({ node, ...props }) => <span {...props} />,
               }}
             >
               {answer}
@@ -58,10 +61,10 @@ const FAQItem = ({ question, answer, isOpen, onToggle }) => {
 const Faq = ({ title, items }) => {
   const [openItems, setOpenItems] = useState({})
 
-  const toggleItem = (index) => {
+  const toggleItem = index => {
     setOpenItems(prev => ({
       ...prev,
-      [index]: !prev[index]
+      [index]: !prev[index],
     }))
   }
 
