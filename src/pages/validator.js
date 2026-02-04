@@ -238,6 +238,25 @@ const ValidatorPage = () => {
             <Col className="py-5">
               <h1 className="mb-3 h2">{content.title}</h1>
               <h5 className="fw-normal">{content.description}</h5>
+              <p className="mt-3 mb-0">
+                Powered by{" "}
+                <a
+                  href="https://github.com/lottie/lottie-specs-js"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  lottie-specs-js
+                </a>
+                . Also available for Python:{" "}
+                <a
+                  href="https://github.com/lottie/lottie-specs-python"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  lottie-specs-python
+                </a>
+                .
+              </p>
             </Col>
           </Row>
         </Container>
