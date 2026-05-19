@@ -81,6 +81,7 @@ image: null
 - <a href="https://github.com/Samsung/rlottie" target="_blank">rlottie</a> (C++) by Samsung
 - <a href="https://github.com/LottieFiles/dotlottie-rs" target="_blank">dotlottie-rs</a> (Rust) by LottieFiles
 - <a href="https://www.thorvg.org/" target="_blank">ThorVG</a> - for rendering vector-based scenes and animations, including SVG and Lottie formats
+- <a href="https://github.com/lottie4j/lottie4j" target="_blank">Lottie4j</a> (Java)
 
 <br/>
 
