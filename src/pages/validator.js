@@ -188,7 +188,9 @@ const ValidatorPage = () => {
 
   useEffect(() => {
     setLoading(true)
-    setValidator(new LottieValidator(Ajv.Ajv2020, lottieSchema))
+    setValidator(
+      new LottieValidator(Ajv.Ajv2020, lottieSchema, { docs_url: "" })
+    )
     setLoading(false)
 
     return () => {
